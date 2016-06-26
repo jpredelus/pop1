@@ -23,5 +23,5 @@ class SettingsController {
   }
 }
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .controller('SettingsController', SettingsController);

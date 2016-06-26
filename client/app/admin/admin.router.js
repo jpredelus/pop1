@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pacquetApp.admin')
+angular.module('paquetApp.admin')
   .config(function($stateProvider) {
     $stateProvider.state('admin', {
       url: '/admin',

@@ -14,6 +14,6 @@
     }
   }
 
-  angular.module('pacquetApp.admin')
+  angular.module('paquetApp.admin')
     .controller('AdminController', AdminController);
 })();

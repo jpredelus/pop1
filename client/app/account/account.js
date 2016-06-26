@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .config(function($stateProvider) {
     $stateProvider.state('login', {
         url: '/login',

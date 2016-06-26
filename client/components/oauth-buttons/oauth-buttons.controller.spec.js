@@ -3,7 +3,7 @@
 describe('Controller: OauthButtonsCtrl', function() {
 
   // load the controller's module
-  beforeEach(module('pacquetApp'));
+  beforeEach(module('paquetApp'));
 
   var OauthButtonsCtrl, $window;
 

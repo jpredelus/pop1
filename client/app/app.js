@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pacquetApp', ['pacquetApp.auth', 'pacquetApp.admin', 'pacquetApp.constants',
+angular.module('paquetApp', ['paquetApp.auth', 'paquetApp.admin', 'paquetApp.constants',
     'ngCookies', 'ngResource', 'ngSanitize', 'btford.socket-io', 'ui.router', 'ui.bootstrap',
     'validation.match'
   ])

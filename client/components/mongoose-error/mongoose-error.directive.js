@@ -4,7 +4,7 @@
  * Removes server error when user updates input
  */
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .directive('mongooseError', function() {
     return {
       restrict: 'A',

@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('pacquetApp.admin', ['pacquetApp.auth', 'ui.router']);
+angular.module('paquetApp.admin', ['paquetApp.auth', 'ui.router']);

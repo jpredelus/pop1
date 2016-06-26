@@ -29,5 +29,5 @@ class LoginController {
   }
 }
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .controller('LoginController', LoginController);

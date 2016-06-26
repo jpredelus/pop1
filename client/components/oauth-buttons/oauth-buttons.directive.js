@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .directive('oauthButtons', function() {
     return {
       templateUrl: 'components/oauth-buttons/oauth-buttons.html',

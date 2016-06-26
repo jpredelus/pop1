@@ -37,5 +37,5 @@ class SignupController {
   }
 }
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .controller('SignupController', SignupController);

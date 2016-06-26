@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .directive('footer', function() {
     return {
       templateUrl: 'components/footer/footer.html',

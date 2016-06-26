@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pacquetApp.auth', ['pacquetApp.constants', 'pacquetApp.util', 'ngCookies',
+angular.module('paquetApp.auth', ['paquetApp.constants', 'paquetApp.util', 'ngCookies',
     'ui.router'
   ])
   .config(function($httpProvider) {

@@ -12,5 +12,5 @@ class NavbarController {
 
 }
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .controller('NavbarController', NavbarController);

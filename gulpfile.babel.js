@@ -499,7 +499,7 @@ gulp.task('build:client', ['styles', 'html', 'constant', 'build:images'], () => 
 gulp.task('html', function() {
     return gulp.src(`.tmp/{app,components}/**/*.html`)
         .pipe(plugins.angularTemplatecache({
-            module: 'pacquetApp'
+            module: 'paquetApp'
         }))
         .pipe(gulp.dest('.tmp'));
 });
@@ -512,7 +512,7 @@ gulp.task('jade', function() {
 gulp.task('constant', function() {
   let sharedConfig = require(`./${serverPath}/config/environment/shared`);
   return plugins.ngConstant({
-    name: 'pacquetApp.constants',
+    name: 'paquetApp.constants',
     deps: [],
     wrap: true,
     stream: true,

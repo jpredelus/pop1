@@ -6,7 +6,7 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/pacquet-dev'
+    uri: 'mongodb://localhost/paquet-dev'
   },
 
   // Seed database on startup

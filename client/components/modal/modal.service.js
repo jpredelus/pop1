@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pacquetApp')
+angular.module('paquetApp')
   .factory('Modal', function($rootScope, $uibModal) {
     /**
      * Opens a modal

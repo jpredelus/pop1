@@ -185,6 +185,6 @@
     return Auth;
   }
 
-  angular.module('pacquetApp.auth')
+  angular.module('paquetApp.auth')
     .factory('Auth', AuthService);
 })();

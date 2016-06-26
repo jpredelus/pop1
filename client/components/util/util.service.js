@@ -65,6 +65,6 @@
     return Util;
   }
 
-  angular.module('pacquetApp.util')
+  angular.module('paquetApp.util')
     .factory('Util', UtilService);
 })();

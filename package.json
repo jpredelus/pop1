@@ -1,5 +1,5 @@
 {
-  "name": "pacquet",
+  "name": "paquet",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {

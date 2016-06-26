@@ -36,7 +36,7 @@
     }
   }
 
-  angular.module('pacquetApp')
+  angular.module('paquetApp')
     .component('main', {
       templateUrl: 'app/main/main.html',
       controller: MainController
