@@ -6,11 +6,4 @@ angular.module('paquetApp')
 			url: '/home',
 			templateUrl: 'app/home/home.html'
 		});
-	})
-	.config(['snSkrollrProvider',function(snSkrollrProvider) {
-		// snSkrollrProvider.config({smoothscrolling: true});
-	}])
-	.run(['snSkrollr', function(snSkrollr) {
-		snSkrollr.init();
-		
-    }]);
+	});
