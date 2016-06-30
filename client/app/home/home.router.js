@@ -8,4 +8,7 @@ angular.module('paquetApp.home')
 			controller: 'HomeController',
 			controllerAs: 'Home'
 		});
-	});
+	})
+    .config(function(scrollMagicProvider) {
+        scrollMagicProvider.addIndicators = true;
+    });

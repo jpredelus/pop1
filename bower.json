@@ -16,9 +16,27 @@
     "angular-socket-io": "~0.7.0",
     "angular-ui-router": "~0.2.15",
     "angular-validation-match": "~1.5.2",
-    "angular-scroll-magic": "^0.0.7"
+    "angular-scroll-magic": "^0.0.7",
+    "animate.css": "^3.5.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.0"
+  },
+  "overrides": {
+    "scrollmagic": {
+      "main": [
+        "scrollmagic/uncompressed/ScrollMagic.js",
+        "scrollmagic/uncompressed/plugins/animation.gsap.js",
+        "scrollmagic/uncompressed/plugins/animation.velocity.js",
+        "scrollmagic/uncompressed/plugins/debug.addIndicators.js",
+        "scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js"
+      ]
+    },
+    "gsap": {
+      "main": [
+        "src/uncompressed/TweenMax.js",
+        "src/uncompressed/plugins/ScrollToPlugin.js"
+      ]
+    }
   }
 }
