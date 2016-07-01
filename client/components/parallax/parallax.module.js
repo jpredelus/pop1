@@ -1,0 +1,1 @@
+angular.module('paquetApp.parallax',['hj.scrollMagic']);

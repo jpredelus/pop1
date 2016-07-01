@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('paquetApp.home', ['hj.scrollMagic']);
+angular.module('paquetApp.home', ['paquetApp.parallax']);
