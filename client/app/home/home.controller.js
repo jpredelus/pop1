@@ -2,8 +2,8 @@
 
 
 class HomeController {
-    constructor() {
-        
+    constructor($scope) {
+        this.options = { navigation : true};
     }
 }
 
