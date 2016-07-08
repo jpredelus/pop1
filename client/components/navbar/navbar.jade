@@ -1,34 +1,22 @@
-div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarController')
-  div.container
-    div.navbar-header
-      button.navbar-toggle(type='button', ng-click='nav.isCollapsed = !nav.isCollapsed')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='/') paquet
+div(ng-controller="NavbarController", ng-cloak)
+  md-content.md-padding
+    md-nav-bar(md-selected-nav-item='nav.path', nav-bar-aria-label='navigation links')
+      span(flex)
+      md-nav-item(ng-hide='nav.isLoggedIn()', md-nav-sref="home", name="home") Home
+      
+      md-nav-item(ng-repeat='item in nav.menu', md-nav-sref='{{item.state}}', name='{{item.state}}') {{item.title}}
+      
+      md-nav-item(ng-show='nav.isAdmin()', md-nav-sref='admin', name='admin') Admin
+      
+      md-nav-item(ng-hide='nav.isLoggedIn()', md-nav-sref='login', name='login') Login
 
-    div#navbar-main.navbar-collapse.collapse(uib-collapse='nav.isCollapsed')
-      ul.nav.navbar-nav
-        li(ng-repeat='item in nav.menu', ui-sref-active='active')
-          a(ui-sref='{{item.state}}') {{item.title}}
+      md-nav-item(ng-hide='nav.isLoggedIn()', md-nav-sref="signup", name="signup") Sign Up
 
-        li(ng-show='nav.isAdmin()', ui-sref-active='active')
-          a(ui-sref='admin') Admin
+      md-nav-item(ng-show='nav.isLoggedIn()')
+        p.navbar-text Hello {{ nav.getCurrentUser().name }}
 
-      ul.nav.navbar-nav.navbar-right
-        li(ng-hide='nav.isLoggedIn()', ui-sref-active='active')
-          a(ui-sref='signup') Sign up
+      md-nav-item(ng-show='nav.isLoggedIn()', md-nav-sref="settings" name='settings')
+        md-icon(md-colors = "{color: 'grey'}") settings
 
-        li(ng-hide='nav.isLoggedIn()', ui-sref-active='active')
-          a(ui-sref='login') Login
-
-        li(ng-show='nav.isLoggedIn()')
-          p.navbar-text Hello {{ nav.getCurrentUser().name }}
-
-        li(ng-show='nav.isLoggedIn()', ui-sref-active='active')
-          a(ui-sref='settings')
-            span.glyphicon.glyphicon-cog
-
-        li(ng-show='nav.isLoggedIn()')
-          a(ui-sref='logout') Logout
+      md-nav-item(ng-show='nav.isLoggedIn()' md-nav-sref='logout', name='logout') Logout
+      
