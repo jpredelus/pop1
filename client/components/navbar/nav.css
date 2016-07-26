@@ -1,0 +1,7 @@
+.navfix {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    display: block;
+    margin-bottom: 50px;
+}

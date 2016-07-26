@@ -1,5 +1,5 @@
-div(ng-controller="NavbarController", ng-cloak)
-  md-content.md-padding
+div(ng-controller="NavbarController", ng-class= "{navfix: nav.isPath('home')}", ng-cloak)
+  md-content
     md-nav-bar(md-selected-nav-item='nav.path', nav-bar-aria-label='navigation links')
       span(flex)
       md-nav-item(ng-hide='nav.isLoggedIn()', md-nav-sref="home", name="home") Home

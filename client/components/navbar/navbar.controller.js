@@ -5,7 +5,7 @@ class NavbarController {
 
   //start-non-standard
   constructor(Auth, $location) {
-    this.path = $location.path().replace('/','');
+    this.isPath = (path) => path === $location.path().replace('/','');
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
