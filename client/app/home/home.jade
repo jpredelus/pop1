@@ -1,10 +1,15 @@
-div(full-page, options = "Home.options")
-  .section.slide
+.slide-container(full-page, options = "Home.options")
+  .section.slide#one
     md-content.md-padding.transparent(layout-fill layout="column" layout-align = "start center")
-      div(flex="40")
-      .md-display-2( flex ="100" md-colors ="{color: 'default-background'}") 
-        span.raleway Marketing Phrase
-  .section
-    md-content.md-padding
+      div(flex="20")
+      .md-display-2.raleway( flex ="100" md-colors ="{color: 'default-background'}") 
+         |Marketing Phrase
+  .section#two
+    md-content.md-padding.transparent(layout-fill layout="column" layout-align = "start start")
+      div(flex="30")
+      .md-display-2.raleway(flex-offset="15" flex="25" md-colors ="{color: 'default-background'}")
+         |More Marketing!
+
+
   .section Some Html
   .section Some Html

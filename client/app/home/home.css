@@ -1,25 +1,17 @@
-.test-box {
-	text-align: center;
-	background-color: yellow;
-	height: 200px;
-}
-
-.slide {
-    background-image: url(../assets/images/glassestux.jpg);
+#one {
     background-size: 100% 100%;
+    background-image: url(../assets/images/glassestux.jpg);
 }
 
-.transparent { 
-    background-color: rgba(0, 0, 0, 0); 
-}
-
-.touch-nav {
-    margin-top: -20px;
+#two {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../assets/images/womansunshine.jpeg);
 }
 
 .slide-container {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    top: 49px;
+    top: 45px;
 }

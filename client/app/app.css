@@ -27,26 +27,6 @@
   font-style: normal;
 }
 
-/**
- * App-wide Styles
- */
-
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-.raleway {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-}
-
-.lato {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-}
 
 /*Change Angular Material default Font
 from https://github.com/angular/material/issues/6561*/
@@ -63,4 +43,29 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+/**
+ * App-wide Styles
+ */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.transparent { 
+    background-color: rgba(0, 0, 0, 0); 
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
