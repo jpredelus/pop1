@@ -13,5 +13,4 @@ angular.module('paquetApp.home')
         $mdThemingProvider.theme('lala')
         .primaryPalette('yellow');
 
-        console.log($mdThemingProvider.theme('default'));
     });
