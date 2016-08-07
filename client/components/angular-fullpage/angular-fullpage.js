@@ -30,16 +30,26 @@
         if ($.fn.fullpage.destroy) {
           $.fn.fullpage.destroy('all');
         }
-      };
+    };
 
       var sanatizeOptions = function(options) {
+        const usrOptions = Object.assign({}, options);
+
         options.onLeave = function(page, next){
           pageIndex = next;
+          if (usrOptions.onLeave) {
+            usrOptions.onLeave(page, next);
+          }
         };
 
         options.onSlideLeave = function(anchorLink, page, slide, direction, next){
           pageIndex   = page;
           slideIndex  = next;
+
+          if (usrOptions.onSlideLeave) {
+            usrOptions.onSlideLeave(anchorLink, page, slide, direction, next);
+          }
+
         };
 
         options.afterRender = function(){
@@ -53,6 +63,10 @@
             $timeout(function() {
               $.fn.fullpage.silentMoveTo(pageIndex, slideIndex);
             });
+          }
+
+          if (usrOptions.afterRender) {
+            usrOptions.afterRender();
           }
         };
 
