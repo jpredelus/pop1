@@ -5,3 +5,8 @@
     display: block;
     margin-bottom: 50px;
 }
+
+.no-scroll {
+    overflow: visible;
+
+}
