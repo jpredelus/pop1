@@ -1,9 +1,12 @@
 .slide-container(full-page, options = "Home.options")
   .section.slide#one
-    md-content.md-padding.transparent(layout-fill layout="column" layout-align = "start center")
-      div(flex="20")
-      .md-display-2.raleway#thin( flex ="100" md-colors ="{color: 'default-background'}") 
-        |Marketing Phrase
+    .whitebox
+    md-content.md-padding.transparent(layout-fill layout="column" layout-align = "start")
+      div(flex="65")
+      .md-display-2.raleway(layout ="row" flex ="35" md-colors ="{color: 'default-background'}" layout-wrap)
+        div(flex-offset="15" flex="85")
+          .md-display-3.no-margin#bold $50 SUIT RENTAL
+          .md-display-1#bold(flex-offset="10") VALUED UP TO $1,OOO
   .section#two
     md-content.md-padding.transparent(layout-fill layout="column" layout-align = "start start")
       div(flex="30")

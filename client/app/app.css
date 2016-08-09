@@ -65,8 +65,16 @@ textarea {
   font-weight: 300;
 }
 
+#no-margin {
+  margin: 0px;
+}
+
 #thin {
   font-weight: 100;
+}
+
+#bold {
+  font-weight: bold;
 }
 
 .lato {

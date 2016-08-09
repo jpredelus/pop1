@@ -1,12 +1,21 @@
 #one {
     background-size: 100% 100%;
-    background-image: url(../assets/images/glassestux.jpg);
+    background-image: url(../assets/images/slideonebg.jpg);
 }
 
 #two {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url(../assets/images/womansunshine.jpeg);
+}
+
+.whitebox {
+    position: absolute;
+    top: 10%;
+    margin-left: 4%;
+    background-color: rgba(255,255,255,.18);
+    width: 91%;
+    height: 83%;
 }
 
 .slide-container {
