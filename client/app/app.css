@@ -65,6 +65,10 @@ textarea {
   font-weight: 300;
 }
 
+#thin {
+  font-weight: 100;
+}
+
 .lato {
   font-family: 'Lato', sans-serif;
   font-weight: 300;

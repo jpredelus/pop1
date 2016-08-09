@@ -8,9 +8,4 @@ angular.module('paquetApp.home')
 			controller: 'HomeController',
 			controllerAs: 'Home'
 		});
-	})
-    .config(($mdThemingProvider)=> {
-        $mdThemingProvider.theme('lala')
-        .primaryPalette('yellow');
-
-    });
+	});

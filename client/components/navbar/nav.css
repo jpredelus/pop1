@@ -6,7 +6,26 @@
     margin-bottom: 50px;
 }
 
+md-nav-bar span {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.logotext {
+    padding: 10px;
+    font-size: 30px;
+}
+
+.navlogo {
+    padding-left: 25px;
+}
+
+.navcontent {
+    background-color: transparent !important;
+}
+
 .no-scroll {
     overflow: visible;
-
 }
