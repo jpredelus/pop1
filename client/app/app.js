@@ -7,7 +7,9 @@ angular.module('paquetApp', ['paquetApp.auth', 'paquetApp.admin', 'paquetApp.hom
   .config(function($urlRouterProvider, $locationProvider, $mdIconProvider) {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
-    $mdIconProvider.iconSet('brand:logo', './assets/images/ANZUG_LOGO.svg', 48);
+    $mdIconProvider.iconSet('brand:logo', './assets/SVGS/ANZUG_LOGO.svg', 48);
+    $mdIconProvider.iconSet('brand:suit', './assets/SVGS/SUIT.svg', 48);
+    $mdIconProvider.iconSet('brand:suit-trans', './assets/SVGS/SUIT-TRANSPARENT.svg', 48);
     
 
   })

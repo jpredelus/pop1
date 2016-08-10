@@ -9,6 +9,11 @@
     background-image: url(../assets/images/slidetwobg.png);
 }
 
+#how-icon {
+    height: 200px;
+    width: 200px;
+}
+
 .whitebox {
     position: absolute;
     top: 10%;
