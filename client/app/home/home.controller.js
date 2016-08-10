@@ -76,7 +76,13 @@ class HomeController {
         }
 
         this.animator = animator; // so that the view can access the animator function
-        this.options = { navigation : true, afterLoad : afterLoadFn}; //options for fullpagejs module
+
+        //options for fullpagejs module
+        this.options = { 
+        navigation : true, 
+        afterLoad : afterLoadFn,
+        scrollingSpeed: 500
+        }; 
     }
 }
 
