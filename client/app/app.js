@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('paquetApp', ['paquetApp.auth', 'paquetApp.admin', 'paquetApp.home','paquetApp.constants',
-    'ngCookies', 'ngResource', 'ngSanitize', 'btford.socket-io', 'ui.router',
+    'ngCookies', 'ngResource', 'ngSanitize', 'ngAnimate', 'btford.socket-io', 'ui.router',
     'validation.match', 'ngMaterial'
   ])
   .config(function($urlRouterProvider, $locationProvider, $mdIconProvider) {
