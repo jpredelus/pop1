@@ -3,7 +3,7 @@
     .whitebox
     md-content.md-padding.transparent(layout-fill layout="column" layout-align = "start")
       div(flex="65")
-      .md-display-2.raleway.animated.fadeIn(ng-class="Home.scrollCheck(1) ? 'fadeIn' : 'fadeOut'" layout ="row" flex ="35" md-colors ="{color: 'default-background'}" layout-wrap)
+      .md-display-2.raleway.animated.fadeIn(ng-class="Home.animator(1,'fadeIn')" layout ="row" flex ="35" md-colors ="{color: 'default-background'}" layout-wrap)
         div(flex-offset="15" flex="85")
           .md-display-3.no-margin#bold $50 SUIT RENTAL
           .md-display-1#bold(flex-offset="10") VALUED UP TO $1,OOO
@@ -17,7 +17,7 @@
   .section
     md-content.md-padding(layout-fill layout="column" )
       div(flex="10")
-      div(layout="row")
+      div.animated(layout="row" ng-class="Home.animator(3,'fadeInUp','fadeInDown')")
         md-card.md-whiteframe-8dp(flex-offset="5" flex ="25" align="center")
           .md-padding Test Title
           md-card-content
