@@ -16,9 +16,7 @@ angular.module('paquetApp')
         $mdThemingProvider.definePalette('mycolors', mycolors);
         $mdThemingProvider.theme('navbar', 'default');
         // There is a bug that doesn't register nav bar's accent if there is a theme other than default
-        // issue is here https://github.com/angular/material/issues/9137
-        $mdThemingProvider.theme('navbar').accentPalette('blue');
-        $mdThemingProvider.theme('default').accentPalette('red', {
+        $mdThemingProvider.theme('navbar').accentPalette('red', {
             'default': '900'
         });
     });
