@@ -9,7 +9,7 @@ class NavbarController {
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
-    
+    this.getTheme = () => this.isPath('home') ? 'navdark' : 'navbar';
   }
 
 }

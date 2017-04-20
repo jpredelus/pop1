@@ -8,15 +8,32 @@ angular.module('paquetApp')
     controllerAs: 'nav'
   }))
   .config(function($mdThemingProvider) {
+        // create a dark and a light navbar theme based on default theme
+        $mdThemingProvider.theme('navbar');
+        const navTheme = $mdThemingProvider.theme('navbar'); // dark text
+        const navDark = $mdThemingProvider.theme('navdark'); // light text
+        
+        // create transparent palette by extending grey palette
+        const transparent = $mdThemingProvider.extendPalette('grey', {
+            '50':'rgba(255,255,255,.00001)', //
+        }); 
+        $mdThemingProvider.definePalette('transparent', transparent);
+        
 
-        const mycolors = $mdThemingProvider.extendPalette('grey', {
-            'A100':'rgba(255,255,255,.00001)', //transparent
-            'A200': 'rgba(0,0,0,1)', // black
+        // Set theme backgrounds as transparent
+        navTheme
+        .backgroundPalette('transparent', {
+            'default': '50'
+        }) // make the default accent red-900
+        .accentPalette('red', {
+            'default': '900'
         });
-        $mdThemingProvider.definePalette('mycolors', mycolors);
-        $mdThemingProvider.theme('navbar', 'default');
-        // There is a bug that doesn't register nav bar's accent if there is a theme other than default
-        $mdThemingProvider.theme('navbar').accentPalette('red', {
+
+        navDark.dark()
+        .backgroundPalette('transparent', {
+            'default': '50'
+        })
+        .accentPalette('red', {
             'default': '900'
         });
     });

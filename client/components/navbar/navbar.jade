@@ -1,8 +1,8 @@
-div(ng-controller="NavbarController", md-theme="navbar" ng-class= "{navfix: nav.isPath('home')}", ng-cloak)
-  md-content.no-scroll(ng-class= "{navcontent: nav.isPath('home')}")
+div(ng-controller="NavbarController", md-theme="nav.getTheme()" md-theme-watch="true" ng-class= "{navfix: nav.isPath('home')}", ng-cloak)
+  md-content.no-scroll
     md-nav-bar(md-selected-nav-item='stateName', nav-bar-aria-label='navigation links')
-      md-icon.navlogo(md-svg-icon="brand:logo" aria-label="logo" md-colors ="{color: 'default-background'}")
-      span.logotext.raleway(md-colors ="{color: 'default-background'}") ANZUG
+      md-icon.navlogo(md-svg-icon="brand:logo" aria-label="logo")
+      span.logotext.raleway ANZUG
       span(flex)
       md-nav-item(ng-hide='nav.isLoggedIn()', md-nav-sref="home", name="home" )
         span  Home
