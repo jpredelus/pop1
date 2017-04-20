@@ -65,6 +65,7 @@ class HomeController {
          */
         function animator (idx, up, down = null, exit = 'fadeOut') {
             if (down) {
+                // ES6 object with dynamic keys
                 return {
                     [up]: sectionCheck(idx, 'up'),
                     [down]: sectionCheck(idx, 'down'),
