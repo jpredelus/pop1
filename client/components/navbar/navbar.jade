@@ -2,10 +2,9 @@ div(ng-controller="NavbarController", md-theme="nav.getTheme()" md-theme-watch="
   md-content.no-scroll
     md-nav-bar(md-selected-nav-item='stateName', nav-bar-aria-label='navigation links')
       md-icon.navlogo(md-svg-icon="brand:logo" aria-label="logo")
-      span.logotext.raleway ANZUG
+      span.logotext.raleway(ui-sref='home', name='home' css-attr ttcursor="pointer") ANZUG
       span(flex)
-      md-nav-item(ng-hide='nav.isLoggedIn()', md-nav-sref="home", name="home" )
-        span  Home
+      
 
       md-nav-item(ng-repeat='item in nav.menu', md-nav-sref='{{item.state}}', name='{{item.state}}') {{item.title}}
       
