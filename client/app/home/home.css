@@ -45,3 +45,37 @@
     width: 100%;
     overflow: hidden;
 }
+
+.testomonial {
+    float: left;
+    margin-right: 10px;
+}
+
+.testomonial img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.blockquote{
+  display:block;
+  margin: 0px;
+  position: relative;
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #666;
+  text-align: justify;
+}
+
+.blockquote::before {
+    content: "\201C";
+    font-family: Georgia,serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #999;
+    position: relative;
+    top: -5px;
+    float: left;
+}

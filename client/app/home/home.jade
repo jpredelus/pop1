@@ -36,4 +36,30 @@
             .md-display-1.raleway Wear & Return
 
   .section
-    
+    md-content.md-padding.transparent(layout-fill layout="column" )
+      div(flex="10")
+      div(layout="row")
+        div(flex-offset="5" flex="30")
+          .md-display-2.raleway What is Anzug?
+          p.md-body
+            |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        md-card(flex-offset="30" flex="25")
+          md-card-title
+            md-cart-title-text
+              span.md-headline Value Bullets
+          md-card-content
+            ul
+              li Example
+              li Example
+              li Example
+              li Example
+      div(flex="20")
+      div(layout="row")
+        md-card.clearfix(flex-offset="5" flex="25" layout="column" ng-repeat="i in [1,2,3]")
+          md-card-content(flex="100")
+            div.testomonial
+              img(src="../assets/images/userprofile-1.png")
+              .md-body-2 George Constanza
+              div.md-caption Software Engineer
+            .blockquote
+              |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
