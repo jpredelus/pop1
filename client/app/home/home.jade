@@ -12,22 +12,27 @@
     .blackbox
     md-content.md-padding.transparent(layout-fill layout="column" )
       div(flex="10")
-      .md-display-3.raleway(md-colors ="{color: 'default-background'}" align="center") HOW ANZUG WORKS?
+      .md-display-3.raleway(md-colors ="{color: 'transparent-100'}" align="center") HOW ANZUG WORKS?
       div(flex="5")
-      div.animated#speedtwo(layout="row" ng-class="Home.animator(2,'fadeInUp','fadeInDown')")
-        md-card.md-whiteframe-8dp(flex-offset="5" flex ="25" align="center")
-          div(flex="")
-          .md-display-1.md-padding.raleway() Sign Up
-            
-        md-card.md-whiteframe-8dp(flex-offset="5" flex ="25")
+      div.animated#speedtwo(md-colors="{background: 'transparent-50', color: 'transparent-100'}" layout="row" ng-class="Home.animator(2,'fadeInUp','fadeInDown')")
+        div(flex-offset="5" flex ="25")
+          md-card-content(layout-fill layout="column" align ="center")
+            div(flex="" align="center")
+              md-icon(md-svg-icon="account-plus" css-attr ttpadding="25" ttheight="200" ttwidth="200" md-colors="{color: 'red-900'}")
+            div(flex="" css zzheight="100")
+            .md-display-1.raleway Sign Up
+
+        div(flex-offset="5" flex ="25")
           md-card-content(layout-fill layout="column" align="center")
             div(flex="")
-              md-icon(md-svg-icon="brand:suit-trans" aria-label="suit" css zzpadding="25" zzheight="200" zzwidth="200" md-colors="{color: 'transparent-A200'}")
+              md-icon(md-svg-icon="brand:suit-trans" aria-label="suit" css-attr ttpadding="25" ttheight="200" ttwidth="200" md-colors="{color: 'red-900'}")
             div(flex="" css zzheight="100")
-            .md-display-1.raleway() Select Suit
-        md-card.md-whiteframe-8dp(flex-offset="5" flex ="25")
+            .md-display-1.raleway Select Suit
+        div(flex-offset="5" flex ="25")
           md-card-content(layout-fill layout="column" align ="center")
             div(flex)
+              md-icon(md-svg-icon="package-variant-closed" css-attr ttpadding="25" ttheight="200" ttwidth="200" md-colors="{color: 'red-900'}")
+            div(flex="" css zzheight="100")
             .md-display-1.raleway Wear & Return
 
   .section Some Html

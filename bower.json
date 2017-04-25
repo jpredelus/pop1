@@ -13,7 +13,7 @@
     "angular-socket-io": "~0.7.0",
     "angular-ui-router": "~0.2.15",
     "angular-validation-match": "~1.5.2",
-    "angular-material": "master",
+    "angular-material": "^1.1.4",
     "fullpage.js": "^2.8.2",
     "animate.css": "^3.5.2"
   },

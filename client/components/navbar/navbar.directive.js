@@ -15,7 +15,9 @@ angular.module('paquetApp')
         
         // create transparent palette by extending grey palette
         const transparent = $mdThemingProvider.extendPalette('grey', {
-            '50':'rgba(255,255,255,.00001)', //
+            '50':'rgba(255,255,255,.00001)', // transparent
+            '100':'rgba(255,255,255,1)',  // white
+            '900':'rgba(0,0,0,1)'
         }); 
         $mdThemingProvider.definePalette('transparent', transparent);
         

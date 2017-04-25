@@ -49,6 +49,27 @@ textarea {
  * App-wide Styles
  */
 
+/*Allow shading of custom svg icons*/
+svg * {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.inherit-bg * {
+  background-color: inherit;
+
+}
+
+.inherit-c * {
+  color: inherit;
+
+}
+
+.inherit * {
+  background-color: inherit;
+  color: inherit;
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
