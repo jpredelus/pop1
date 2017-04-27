@@ -2,10 +2,17 @@
 
 angular.module('paquetApp.home')
 	.config(function($stateProvider) {
-		$stateProvider.state('home', {
+		$stateProvider
+        .state('home', {
 			url: '/home',
-			templateUrl: 'app/home/home.html',
+			templateUrl: 'app/home/views/home.html',
 			controller: 'HomeController',
 			controllerAs: 'Home'
-		});
+		})
+        .state('home.about', {
+            name: 'about',
+            url: '/about',
+            parent: 'home',
+            templateUrl: 'app/home/views/about.html'
+        });
 	});

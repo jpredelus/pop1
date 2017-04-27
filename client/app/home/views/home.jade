@@ -1,0 +1,66 @@
+div(ui-view="")
+  .slide-container(ng-cloak full-page, options = "Home.options")
+    .section.slide#one
+      .whitebox
+      md-content.md-padding.transparent(layout-fill layout="column" layout-align = "start")
+        div(flex="65")
+        .md-display-2.raleway.animated.fadeIn(ng-class="Home.animator(1,'fadeIn')" layout ="row" flex ="35" md-colors ="{color: 'default-background'}" layout-wrap)
+          div(flex-offset="15" flex="85")
+            .md-display-3.no-margin#bold $50 SUIT RENTAL
+            .md-headline#bold(flex-offset="15") VALUED UP TO $1,OOO
+
+    .section#two
+      .blackbox
+      md-content.md-padding.transparent(layout-fill layout="column" )
+        div(flex="10")
+        .md-display-3.raleway(md-colors ="{color: 'transparent-100'}" align="center") HOW ANZUG WORKS?
+        div(flex="5")
+        div.animated#speedtwo(md-colors="{background: 'transparent-50', color: 'transparent-100'}" layout="row" ng-class="Home.animator(2,'fadeInUp','fadeInDown')")
+          div(flex-offset="5" flex ="25")
+            md-card-content(layout-fill layout="column" align ="center")
+              div(flex="" align="center")
+                md-icon(md-svg-icon="account-plus" css-attr ttpadding="25" ttheight="200" ttwidth="200" md-colors="{color: 'red-900'}")
+              div(flex="" css zzheight="100")
+              .md-display-1.raleway Sign Up
+
+          div(flex-offset="5" flex ="25")
+            md-card-content(layout-fill layout="column" align="center")
+              div(flex="")
+                md-icon(md-svg-icon="brand:suit-trans" aria-label="suit" css-attr ttpadding="25" ttheight="200" ttwidth="200" md-colors="{color: 'red-900'}")
+              div(flex="" css zzheight="100")
+              .md-display-1.raleway Select Suit
+          div(flex-offset="5" flex ="25")
+            md-card-content(layout-fill layout="column" align ="center")
+              div(flex)
+                md-icon(md-svg-icon="package-variant-closed" css-attr ttpadding="25" ttheight="200" ttwidth="200" md-colors="{color: 'red-900'}")
+              div(flex="" css zzheight="100")
+              .md-display-1.raleway Wear & Return
+
+    .section
+      md-content.md-padding.transparent.animated(layout-fill layout="column" ng-class="Home.animator(3,'fadeInUp','fadeInDown')")
+        div(flex="10")
+        div(layout="row")
+          div(flex-offset="5" flex="30")
+            .md-display-2.raleway What is Anzug?
+            p.md-body
+              |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          md-card(flex-offset="30" flex="25")
+            md-card-title
+              md-cart-title-text
+                span.md-headline Value Bullets
+            md-card-content
+              ul
+                li Example
+                li Example
+                li Example
+                li Example
+        div(flex="20")
+        div(layout="row")
+          md-card.clearfix(flex-offset="5" flex="25" layout="column" ng-repeat="i in [1,2,3]")
+            md-card-content(flex="100")
+              div.testomonial
+                img(src="../assets/images/userprofile-1.png")
+                .md-body-2 George Constanza
+                div.md-caption Software Engineer
+              .blockquote
+                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
