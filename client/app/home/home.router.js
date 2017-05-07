@@ -9,7 +9,7 @@ angular.module('paquetApp.home')
 			controller: 'HomeController',
 			controllerAs: 'Home'
 		})
-        .state('home.about', {
+        .state('about', {
             name: 'about',
             url: '/about',
             parent: 'home',

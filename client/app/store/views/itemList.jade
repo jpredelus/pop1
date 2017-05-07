@@ -1,0 +1,4 @@
+md-content(layout="column", layout-padding layout-fill css-attr ttmin-height="70vh") {{list.images}}
+    div(layout="row" flex="25" flex-offset="5" layout-fill layout-wrap)
+        div(ng-repeat = "i in [0,1,2,3]" flex="25")
+            store-item(ng-repeat = "img in list.rows[i]" item="img")

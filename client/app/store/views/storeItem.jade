@@ -1,0 +1,13 @@
+md-card.shop-card(ng-class="{'md-whiteframe-5dp': hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false")
+    img.md-card-img(src="../assets/images/suits/{{item.item}}")
+    md-card-content(layout="column" css-attr ttpadding="12px")
+        div(css-attr ttmargin-bottom="10px")
+            a(href="http://google.com") Username
+        div(layout="row")
+            span(flex="85") Red Suit
+            span $99
+        div(css-attr ttmargin-top="15px")
+            md-button.md-icon-button(href="http://google.com")
+                md-icon(md-svg-icon="heart-outline")
+            md-button.md-icon-button(href="http://google.com")
+                md-icon(md-svg-icon="cart-plus")

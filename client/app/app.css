@@ -49,8 +49,38 @@ textarea {
  * App-wide Styles
  */
 
+.md-icon-button {
+  opacity: .5
+}
+
+.md-icon-button:hover {
+  opacity: 1
+}
+
+
+
+a, a:active, cite {
+  color: #529ECC;
+}
+
+a:hover {
+    color: #3F51B5;
+}
+
+a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
 /*Allow shading of custom svg icons*/
-svg * {
+
+
+.icon-fix * {
   fill: currentColor;
   stroke: currentColor;
 }
