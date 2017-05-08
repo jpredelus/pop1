@@ -14,8 +14,8 @@ angular.module('paquetApp')
       restrict: 'A',
       link: function(scope, element, attrs) {
         for(const key of Object.keys(attrs)) {
-            if (key.substring(0,2) === 'tt') {
-                element.css(key.replace('tt',''), attrs[key]);
+            if (key.substring(0,1) === '#') {
+                element.css(key.replace('#',''), attrs[key]);
             }
         }
       }
