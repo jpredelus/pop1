@@ -1,0 +1,16 @@
+.store-logo {
+    padding-left: 25px;
+}
+
+.store-logo-text {
+    cursor: pointer;
+    position: relative;
+    top: 7px;
+    left: 4px;
+    font-size: 30px;
+}
+
+.store-nav > .md-nav-bar {
+    height: 60px;
+    padding-top: 20px;
+}

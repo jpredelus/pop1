@@ -7,9 +7,8 @@ angular.module('paquetApp.store')
         parent: 'root',
         url: '/store',
         views: {
-            '@': {
-                component: 'store'
-            }
+            '@': {component: 'store'},
+            'navbar@': {component: 'shopNavbar'}
         }
       });
   });
