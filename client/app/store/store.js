@@ -4,7 +4,12 @@ angular.module('paquetApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('store', {
+        parent: 'root',
         url: '/store',
-        component: 'store'
+        views: {
+            '@': {
+                component: 'store'
+            }
+        }
       });
   });
