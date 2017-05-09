@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('paquetApp')
+angular.module('paquetApp.store')
   .config(function ($stateProvider) {
     $stateProvider
       .state('store', {

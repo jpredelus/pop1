@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('paquetApp.home', ['fullPage.js','ngMaterial']);
+angular.module('paquetApp.home', ['fullPage.js']);

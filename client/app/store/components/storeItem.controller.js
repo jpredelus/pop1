@@ -6,7 +6,7 @@ class StoreItemController {
     }
 }
 
-angular.module('paquetApp')
+angular.module('paquetApp.store')
 .component('storeItem', {
     templateUrl: 'app/store/views/storeItem.html',
     controller: StoreItemController,

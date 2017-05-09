@@ -20,7 +20,7 @@ class ItemListController {
     }
 }
 
-angular.module('paquetApp')
+angular.module('paquetApp.store')
     .component('itemList', {
         templateUrl: 'app/store/views/itemList.html',
         controller: ItemListController,

@@ -25,7 +25,7 @@ class StoreController {
   }
 }
 
-angular.module('paquetApp')
+angular.module('paquetApp.store')
   .component('store', {
     templateUrl: 'app/store/views/store.html',
     controller: StoreController,
