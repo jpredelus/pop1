@@ -1,1 +1,5 @@
-item-list(items="store.images")
+div(layout="row")
+    md-sidenav.custom-sidenav(md-is-open="true" md-disable-backdrop md-component-id="left") Filters go here
+    md-button(flex="5" ng-click="store.toggle()") Filters
+
+    item-list.test(items="store.images" flex="100")
