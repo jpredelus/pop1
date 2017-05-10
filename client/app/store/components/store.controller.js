@@ -3,12 +3,10 @@
 
 // Parent Component for the store
 class StoreController {
-  constructor($animate, $scope, $log) {
+  constructor($animate) {
     this.open = false;
     this.images = ['blacksuit.jpeg', 'bwsuit.jpeg', 'blackshoes.jpeg','graysuit.jpeg','redsuit.jpeg'];
     this.animate = $animate;
-    this.scope = $scope;
-    this.log = $log.log;
   }
 
 

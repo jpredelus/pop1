@@ -1,7 +1,7 @@
 
-md-toolbar#toolbar-filter(ng-click="store.log(store.scope)" scroll-past="" ng-class="{sticky: scroll}" layout="row")
+md-toolbar#toolbar-filter(ng-click="store.log(store.scope)" scroll-past="90" ng-class="{sticky: scroll}" layout="row" ng-cloak)
     div(flex-offset="5" flex="10")
-        md-button.md-fab.md-mini(ng-click="store.toggle()" aria-label="Filter")
+        md-button.md-fab.md-mini.md-primary(ng-click="store.toggle()" aria-label="Filter")
             md-icon(md-svg-icon="filter")
         span Filters
 div(layout="row")

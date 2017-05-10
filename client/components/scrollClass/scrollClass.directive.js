@@ -2,13 +2,13 @@
 
 angular.module('paquetApp')
     /*
-    This directive toggles a class
+    This directive toggles a class based on a given scroll position
      */
   .directive('scrollPast', function($window) {
     return {
       restrict: 'A',
       link: function(scope, el, attrs) {
-        const scroll = attrs.scrollPast ? attrs.scrollPast : el[0].offsetTop;
+        const scroll = attrs.scrollPast;
         angular.element($window).bind('scroll', (top)=> {
           const prev = scope.scroll;
           const elWindow = top.currentTarget;

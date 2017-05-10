@@ -1,2 +1,2 @@
 'use strict';
-angular.module('paquetApp.store',[]);
+angular.module('paquetApp.store',['ngLodash']);
