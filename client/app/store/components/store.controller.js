@@ -3,26 +3,29 @@
 
 // Parent Component for the store
 class StoreController {
-  constructor($mdSidenav, $window, $animate) {
-    this.message = 'Hello';
+  constructor($animate, $scope, $log) {
     this.open = false;
     this.images = ['blacksuit.jpeg', 'bwsuit.jpeg', 'blackshoes.jpeg','graysuit.jpeg','redsuit.jpeg'];
+    this.animate = $animate;
+    this.scope = $scope;
+    this.log = $log.log;
+  }
 
-    // Function animates sidenav and itemlist so that they shrink and grow smoothly
-    this.toggle = () => {
+
+// Method animates sidenav and itemlist so that the open and close transition is smooth
+  toggle()  {
         const el = angular.element('item-list');
         const el2 = angular.element('md-sidenav');
 
         if(!this.open) {
-            $animate.addClass(el, 'md-opened-custom');
-            $animate.addClass(el2, 'md-opened-custom');
+            this.animate.addClass(el, 'md-opened-custom');
+            this.animate.addClass(el2, 'md-opened-custom');
         } else{
-            $animate.removeClass(el, 'md-opened-custom');
-            $animate.removeClass(el2, 'md-opened-custom');
+            this.animate.removeClass(el, 'md-opened-custom');
+            this.animate.removeClass(el2, 'md-opened-custom');
         }
         this.open = !this.open;
-    };
-  }
+    }
 }
 
 angular.module('paquetApp.store')

@@ -1,5 +1,12 @@
-div(layout="row")
-    md-sidenav.custom-sidenav(md-is-open="true" md-disable-backdrop md-component-id="left") Filters go here
-    md-button(flex="5" ng-click="store.toggle()") Filters
 
-    item-list.test(items="store.images" flex="100")
+md-toolbar#toolbar-filter(ng-click="store.log(store.scope)" scroll-past="" ng-class="{sticky: scroll}" layout="row")
+    div(flex-offset="5" flex="10")
+        md-button.md-fab.md-mini(ng-click="store.toggle()" aria-label="Filter")
+            md-icon(md-svg-icon="filter")
+        span Filters
+div(layout="row")
+    div.sidenav-placeholder(ng-show="scroll && store.open")
+    md-sidenav.custom-sidenav(ng-class="{sticky: scroll}" md-is-open="true" md-disable-backdrop md-component-id="left") Filters go here
+    
+
+    item-list.test(items="store.images" flex="100" ng-class="{scrolly: scroll}")
