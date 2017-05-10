@@ -3,10 +3,51 @@
 
 // Parent Component for the store
 class StoreController {
-  constructor($animate) {
+  constructor($animate, chance, lodash) {
     this.open = false;
     this.images = ['blacksuit.jpeg', 'bwsuit.jpeg', 'blackshoes.jpeg','graysuit.jpeg','redsuit.jpeg'];
     this.animate = $animate;
+
+    // use chancejs to create random items
+    
+    
+    // use mixin to define chance.item,
+    // will choose from set of values for each property
+    chance.mixin({
+        item: (set)=> {
+            return {
+                color: chance.pickone(set.color),
+                state: chance.pickone(set.state),
+                price: chance.pickone(set.price),
+                name: chance.pickone(set.name),
+                date: chance.pickone(set.date),
+            };
+
+        }
+    });
+
+    // create array of sets for each property
+    const itemSet = {};
+    itemSet.color = [];
+    itemSet.state = [];
+    itemSet.price = [];
+    itemSet.name = [];
+    itemSet.date = [];
+
+    //fill sets with random values
+    for(let x of lodash.range(9)) {
+        itemSet.color.push(chance.color({format: 'name'}));
+        itemSet.state.push(chance.state());
+        itemSet.price.push(chance.dollar({max: 300}));
+        itemSet.name.push(chance.name());
+        itemSet.date.push(chance.date());
+    }
+    // create items from set and push into items collection
+    this.items = [];
+    for(let i of lodash.range(30)) {
+        this.items.push(chance.item(itemSet));
+    }
+
   }
 
 
