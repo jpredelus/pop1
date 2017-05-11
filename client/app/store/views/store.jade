@@ -6,8 +6,8 @@ md-toolbar#toolbar-filter(ng-click="store.log(store.scope)" scroll-past="90" ng-
         span Filters
 div(layout="row")
     div.sidenav-placeholder(ng-show="scroll && store.open")
-    md-sidenav.custom-sidenav(ng-class="{sticky: scroll}" md-is-open="true" md-disable-backdrop md-component-id="left") Filters go here
-        filter-list(items="store.items")
+    md-sidenav.custom-sidenav(ng-class="{sticky: scroll}" md-is-open="true" md-disable-backdrop md-component-id="left")
+        filter-list(items="store.items" layout="row" layout-wrap)
     
 
-    item-list.test(items="store.images" flex="100" ng-class="{scrolly: scroll}")
+    item-list.test(items="store.items" flex="100" ng-class="{scrolly: scroll}")

@@ -24,6 +24,96 @@
     top:0;
 }
 
+
+/*Filter animations*/
+
+.filter-list-items {
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,.4);
+    overflow: auto;
+}
+
+.filter-list-items.ng-hide-remove {
+    -webkit-transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    transform: scaleY(0);
+    -webkit-transform:scaleY(0);
+
+}
+.filter-list-items.ng-hide-remove.ng-hide-remove-active {
+    transform: scaleY(1);
+    -webkit-transform:scaleY(1);
+
+}
+
+.filter-list-items.ng-hide-add {
+    -webkit-transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    transform: scaleY(1);
+    -webkit-transform:scaleY(1);
+
+}
+.filter-list-items.ng-hide-add.ng-hide-add-active {
+    transform: scaleY(0);
+    -webkit-transform:scaleY(0);
+
+}
+
+
+.filter-title {
+    border-bottom: 1px solid rgba(0,0,0,1);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    -webkit-transition: border-bottom 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: border-bottom 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.filter-title.selected {
+    color:red;
+    color: #0091EA;
+    font-weight: 400;
+    -webkit-transition: border-bottom .1s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: border-bottom .1s cubic-bezier(0.4, 0.0, 0.2, 1);
+    border-bottom: 0px solid rgba(0,0,0,0);;
+}
+
+/* 
+Component Styling
+*/
+
+item-filter {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+item-filter .filter-title {
+    color: #212121;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(0,0,0,.4)
+}
+
+item-filter .filter-title .md-button {
+    /*color: black;*/
+    position: relative;
+    float: right;
+    bottom: 8px;
+}
+
+filter-list {
+    padding: 20px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    overflow: auto;
+}
+
 item-list.md-opened-custom {
     max-width: 80%;
 }
@@ -40,6 +130,9 @@ item-list.md-opened-custom-add.md-opened-custom-add-active, item-list.md-opened-
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/*
+Sidenav
+*/
 
 md-sidenav.custom-sidenav {
     -webkit-box-flex: 1;
