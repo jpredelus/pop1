@@ -4,9 +4,13 @@ angular.module('paquetApp', ['paquetApp.auth', 'paquetApp.admin', 'paquetApp.hom
     'ngCookies', 'ngResource', 'ngSanitize', 'ngAnimate', 'btford.socket-io', 'ui.router',
     'validation.match', 'ngMaterial'
   ])
-  .config(function($urlRouterProvider, $locationProvider, $mdIconProvider) {
+  .config(function($urlRouterProvider, $locationProvider, $mdIconProvider, $mdThemingProvider) {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
+    $mdThemingProvider.theme('default').accentPalette('red', {
+            'default': '900'
+    });
+    //Setting svg icon sets
     $mdIconProvider.iconSet('brand:logo', './assets/SVGS/ANZUG_LOGO.svg', 48);
     $mdIconProvider.iconSet('brand:suit', './assets/SVGS/SUIT.svg', 48);
     $mdIconProvider.iconSet('brand:suit-trans', './assets/SVGS/SUIT-TRANSPARENT.svg', 48);

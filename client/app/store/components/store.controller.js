@@ -46,6 +46,22 @@ class StoreController {
     for(let i of lodash.range(30)) {
         this.items.push(chance.item(itemSet));
     }
+    
+    // listens for filter changes and shows loading screens
+    $scope.$on('FilterChange', ()=>{
+            this.loading = true;
+        });
+
+    // debounced function to stop loading
+    const stopLoading = lodash.debounce(()=> {
+        $scope.$apply(()=>{
+            this.loading = false;
+        });
+    }, 250);
+
+    $scope.$on('FilterDone', ()=>{
+            stopLoading();
+        });
 
   }
 

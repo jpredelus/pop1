@@ -23,7 +23,7 @@ class itemFilterController {
         this.updateFilterValue = (value, bool)=> {
             this.filterValues[value] = bool;
             this.updateFilter();
-            $scope.$emit('FilterChange', this.filter);
+            $scope.$emit('FilterChange');
 
 
 

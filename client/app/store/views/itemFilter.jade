@@ -1,6 +1,7 @@
 .filter-title(ng-class="{'selected': selected}") {{filter.static.name | uppercase}}
     md-button.md-icon-button(ng-click ="selected = !selected")
-        md-icon(md-svg-icon="plus")
+        md-icon(md-svg-icon="plus" ng-show="!selected")
+        md-icon(md-svg-icon="minus" ng-show="selected")
 ul.filter-list-items(ng-show="selected")
     li(ng-repeat="f in filter.static.values")
         md-checkbox(ng-init="bool=false" ng-model="bool" ng-click="filter.updateFilterValue(f, !bool)")
