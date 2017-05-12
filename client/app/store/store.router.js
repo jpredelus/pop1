@@ -10,5 +10,12 @@ angular.module('paquetApp.store')
             '@': {component: 'store'},
             'navbar@': {component: 'shopNavbar'}
         }
+      })
+      .state('product', {
+        parent: 'store',
+        url: '/product/:productId',
+        views: {
+          '@': {component: 'product'}
+        }
       });
   });
