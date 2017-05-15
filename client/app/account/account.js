@@ -2,18 +2,7 @@
 
 angular.module('paquetApp')
   .config(function($stateProvider) {
-    $stateProvider.state('login', {
-        parent: 'root',
-        url: '/login',
-        views:{
-          '@':{
-              templateUrl: 'app/account/login/login.html',
-              controller: 'LoginController',
-              controllerAs: 'vm'
-            }
-        }
-      })
-      .state('logout', {
+    $stateProvider.state('logout', {
         parent: 'root',
         url: '/logout?referrer',
         views: {
