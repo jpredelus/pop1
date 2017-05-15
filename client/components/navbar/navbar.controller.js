@@ -4,14 +4,25 @@ class NavbarController {
   //end-non-standard
 
   //start-non-standard
-  constructor(Auth, $location) {
+  constructor(Auth, $location, $mdDialog) {
     this.isPath = (path) => path === $location.path().replace('/','');
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
     this.getTheme = () => this.isPath('home') ? 'navdark' : 'navbar';
-  }
+    this.login = (ev) => {
+      $mdDialog.show({
+        controller: 'LoginController',
+        controllerAs: 'login',
+        templateUrl: 'app/account/login/loginModal.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+        fullscreen: false
+      });
+    };
 
+  }
 }
 
 angular.module('paquetApp')

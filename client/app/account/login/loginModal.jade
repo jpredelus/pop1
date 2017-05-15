@@ -1,0 +1,30 @@
+md-dialog(aria-label='Login' flex="50")
+  md-toolbar
+    .md-toolbar-tools
+      h2 Login
+      span(flex='')
+      md-button.md-icon-button(ng-click='login.cancel()')
+        md-icon(md-svg-icon='close', aria-label='Close dialog')
+  md-dialog-content
+    .md-dialog-content
+      form.form(name='loginForm', ng-submit='login.login(loginForm)', novalidate='')
+        div
+          md-input-container.md-block
+            label Email
+            input(type="email" name="userEmail" ng-model="login.user.email" required)
+            div(ng-messages="loginForm.userEmail.$error")
+              div(ng-show="loginForm.userEmail.$error.required") Email is required
+              div(ng-show="loginForm.userEmail.$error.email") Email is invalid
+        div
+          md-input-container.md-block
+            label Password
+            input(type="password" name='userPass', ng-model='login.user.password' required)
+            div(ng-messages="loginForm.password.$error")
+              div(ng-show="loginForm.userPass.$error.required") Password is required
+
+        p(ng-hide="login.loading" md-colors="{color:'default-red'}") {{ login.errors.other }}
+        div
+          button.md-button.md-raised.md-primary(type="submit" ) Login
+          md-progress-circular(ng-show="login.loading" md-mode="indeterminate" md-diameter="20px" css-attr #display="inline" #margin-left="10px")
+        
+

@@ -2,13 +2,18 @@
 
 angular.module('paquetApp', ['paquetApp.auth', 'paquetApp.admin', 'paquetApp.home','paquetApp.store','paquetApp.constants',
     'ngCookies', 'ngResource', 'ngSanitize', 'ngAnimate', 'btford.socket-io', 'ui.router',
-    'validation.match', 'ngMaterial'
+    'validation.match', 'ngMaterial','ngMessages'
   ])
   .config(function($urlRouterProvider, $locationProvider, $mdIconProvider, $mdThemingProvider) {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
-    $mdThemingProvider.theme('default').accentPalette('red', {
+    $mdThemingProvider.theme('default')
+    .accentPalette('red', {
             'default': '900'
+
+    })
+    .primaryPalette('blue', {
+        'default': '900'
     });
     //Setting svg icon sets
     $mdIconProvider.iconSet('brand:logo', './assets/SVGS/ANZUG_LOGO.svg', 48);
