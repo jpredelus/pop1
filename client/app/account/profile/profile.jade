@@ -1,0 +1,17 @@
+div(layout="row" layout-wrap css-attr #margin-left="30px" ng-cloak)
+    .md-display-2.raleway(flex="100" css-attr #margin-bottom="20px") My Account
+
+    md-sidenav.custom-sidenav.md-opened-custom(md-is-open="true" md-disable-backdrop md-component-id="left" flex="20")
+        .profile
+            img(src="../assets/images/userprofile-1.png")
+            .md-body-2 User Name
+        div(layout="row" layout-wrap)
+          md-button#tab(flex="100" ng-repeat= "tab in profile.tabs" ng-class="tab.class" ng-click="profile.select($index)") {{tab.name}}
+    .profile-content(flex="70" flex-offset="5" ng-switch="profile.selected")
+      div(ng-switch-when="Profile")
+        .md-display-1.raleway Profile
+      div(ng-switch-when="Orders")
+        .md-display-1.raleway Orders
+      div(ng-switch-when="Shipping Info")
+        .md-display-1.raleway Shiping Info
+      

@@ -43,6 +43,21 @@ angular.module('paquetApp')
           }
         },
         authenticate: true
+      })
+      .state('profile', {
+        parent: 'root',
+        url: '/profile',
+        views: {
+          '@':{
+            templateUrl: 'app/account/profile/profile.html',
+            controller: 'ProfileController',
+            controllerAs: 'profile'
+          },
+          'navbar@': {
+            template: ''
+          }
+        }
+        
       });
   })
   .run(function($rootScope) {
