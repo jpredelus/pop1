@@ -25,6 +25,9 @@ angular.module('paquetApp')
             templateUrl: 'app/account/signup/signup.html',
             controller: 'SignupController',
             controllerAs: 'vm'
+          },
+          'navbar@': {
+            template: ''
           }
         }
         

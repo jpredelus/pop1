@@ -1,0 +1,16 @@
+.signup {
+    margin: 20px auto;
+}
+
+.signup-logo {
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+.signup-logotext {
+    cursor: pointer;
+    font-size: 30px;
+    top: 7px;
+    left: 5px;
+    position: relative;
+}

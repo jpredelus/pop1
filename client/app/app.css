@@ -57,7 +57,9 @@ textarea {
   opacity: 1
 }
 
-
+.center {
+  margin: 0 auto;
+}
 
 a, a:active, cite {
   color: #529ECC;
