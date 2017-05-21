@@ -10,8 +10,10 @@ div(layout="row" layout-wrap css-attr #margin-left="30px" ng-cloak)
     .profile-content(flex="70" flex-offset="5" ng-switch="profile.selected")
       div(ng-switch-when="Profile")
         .md-display-1.raleway Profile
+        div(ng-include="'app/account/profile/partials/profile.html'")
       div(ng-switch-when="Orders")
         .md-display-1.raleway Orders
+        div(ng-include="'app/account/profile/partials/orders.html'")
       div(ng-switch-when="Shipping Info")
-        .md-display-1.raleway Shiping Info
+        .md-display-1.raleway Shipping Info
       

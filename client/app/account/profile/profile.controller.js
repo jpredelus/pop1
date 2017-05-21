@@ -2,11 +2,11 @@ class ProfileController {
 
   constructor(lodash) {
     this.tabs = [
-    {name: 'Profile', class: {'md-raised': true, 'md-accent': true}},
-    {name: 'Orders', class: {'md-raised': false, 'md-accent': false}},
+    {name: 'Profile', class: {'md-raised': false, 'md-accent': false}},
+    {name: 'Orders', class: {'md-raised': true, 'md-accent': true}},
     {name: 'Shipping Info', class: {'md-raised': false, 'md-accent': false}}
     ];
-    this.selected = 'Profile';
+    this.selected = 'Orders';
 
     this.select = (idx) => {
       const selTab = this.tabs[idx];

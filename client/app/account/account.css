@@ -14,6 +14,7 @@
     left: 5px;
     position: relative;
 }
+/*Profile section styling*/
 
 .profile {
     text-align: center;
@@ -44,4 +45,91 @@ button#tab.md-accent {
 .profile-content {
   background-color: white;
   padding: 50px;
+}
+
+.profile-input {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/*Order section styling*/
+
+.order-column {
+    padding: 0px !important;
+    background-color: #B0BEC5;
+    border: 1px solid rgba(0,0,0,.3);
+}
+
+.order-column.even {
+  background-color: #ECEFF1;
+}
+
+.order-column.selected {
+  background-color: #455A64;
+  color: white;
+}
+
+.order-column .md-subhead {
+  margin-bottom: 5px
+}
+
+.column-button .md-button.md-icon-button {
+  height: 56px;
+  width: 56px;
+}
+
+.column-button md-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.total {
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0,0,0,.7);
+}
+
+.total .title {
+  float: left;
+  font-weight: 700;
+}
+
+.total .amount {
+  float: right;
+  font-weight: 700;
+}
+
+.summary {
+  margin-bottom: 10px;
+}
+
+.summary .title {
+  float: left;
+}
+
+.summary .amount {
+  float: right;
+}
+
+/*Animation for expanding orders*/
+
+.expand {
+  transform: rotate(180deg);
+}
+
+.expand-add {
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.expand-add-active {
+    transform: rotate(180deg);
+}
+
+.expand-remove {
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.expand-remove-active {
+    transform: rotate(360deg);
 }

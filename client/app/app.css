@@ -48,7 +48,9 @@ textarea {
 /**
  * App-wide Styles
  */
-
+.pointer {
+  cursor: pointer;
+}
 .md-icon-button {
   opacity: .5
 }

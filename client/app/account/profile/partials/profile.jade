@@ -1,0 +1,26 @@
+div(layout="row" css-attr #margin-top="20px")
+  div(flex="45" ng-init="edit=false" layout="row" layout-wrap)
+    .md-heading.raleway(flex="100" css-attr #margin-bottom="30px") Account Information
+    md-input-container.profile-input(flex="50")
+      label First Name
+      input(model="user.fName" ng-disabled="!edit")
+    md-input-container.profile-input(flex-offset="5" flex="40")
+      label Last Name
+      input(model="user.lName" ng-disabled="!edit")
+    md-input-container.profile-input(flex="100")
+      label Email
+      input(model="user.email" ng-disabled="!edit")
+    a.pointer(ng-switch="edit" ng-click="edit=!edit")
+      span(ng-switch-when="false") Edit
+      span(ng-switch-when="true") Save
+  div(flex-offset="5" flex="45" ng-init="changePass=false" layout="row" layout-wrap)
+    .md-heading.raleway(flex="100" css-attr #margin-bottom="30px") Password
+    md-input-container.profile-input(flex="100")
+      label Password
+      input(model="user.password" ng-disabled="!changePass")
+    md-input-container.profile-input(flex="100")
+      label Repeat Password
+      input(model="passMatch" ng-disabled="!changePass")
+    a.pointer(ng-switch="changePass" ng-click="changePass=!changePass")
+      span(ng-switch-when="false") Change Password
+      span(ng-switch-when="true") Save Password

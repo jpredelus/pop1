@@ -49,7 +49,7 @@ angular.module('paquetApp')
         url: '/profile',
         views: {
           '@':{
-            templateUrl: 'app/account/profile/profile.html',
+            templateUrl: 'app/account/profile/myAccount.html',
             controller: 'ProfileController',
             controllerAs: 'profile'
           },

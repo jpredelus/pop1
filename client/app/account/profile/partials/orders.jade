@@ -1,0 +1,36 @@
+div(layout="row" css-attr #margin-top="20px" ng-cloak)
+  div(flex="90")
+    md-list
+      md-list-item.order-column(ng-class="{'selected': expand}" ng-class-even="'even'" layout="row" ng-repeat= "l in [1,2,3]" layout-wrap)
+        div(flex="30" ng-repeat= "l in [1,2,3]")
+          .md-subhead Date
+          div Test
+        .column-button(flex="10" ng-init="expand=false")
+          md-button.md-icon-button(flex="" ng-click="expand=!expand")
+            md-icon(ng-class="{'expand': expand}" md-svg-icon="chevron-up")
+        div(layout="row" flex="100" ng-show="expand" css-attr #background="white" #color="rgba(0,0,0,0.87)" layout-wrap layout-padding)
+          div(flex="50" layout="row" layout-wrap)
+            .md-title(flex-offset="0" flex="90") Order Summary
+            div(layout="row" flex-offset="5" flex="100" layout-wrap)
+              .summary(flex="70")
+                .title Merchandise
+                .amount + $99.99
+              .summary(flex="70")
+                .title Discount
+                .amount - $30.00
+              .total(flex="70")
+                .title Total
+                .amount $69.99
+          .md-title(flex-offset="10" flex="40") Shipping Address
+            .md-body-1
+              p George Costanza
+                br 
+                | 123 John Doe Lane
+                br
+                | City, ST
+                br
+                | 00000
+
+          div(flex="100")
+            .md-subhead Payment Method
+            .md-body-1 Card Ending in 0000
