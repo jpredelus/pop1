@@ -2,7 +2,7 @@
 
 angular.module('paquetApp', ['paquetApp.auth', 'paquetApp.admin', 'paquetApp.home','paquetApp.store','paquetApp.constants',
     'ngCookies', 'ngResource', 'ngSanitize', 'ngAnimate', 'btford.socket-io', 'ui.router',
-    'validation.match', 'ngMaterial','ngMessages'
+    'validation.match', 'ngMaterial','ngMessages','mockStore'
   ])
   .config(function($urlRouterProvider, $locationProvider, $mdIconProvider, $mdThemingProvider) {
     $urlRouterProvider.otherwise('/');

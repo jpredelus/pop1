@@ -1,11 +1,12 @@
 class ProfileController {
 
-  constructor(lodash) {
+  constructor(lodash, MockStore) {
     this.tabs = [
     {name: 'Profile', class: {'md-raised': false, 'md-accent': false}},
     {name: 'Orders', class: {'md-raised': true, 'md-accent': true}},
     {name: 'Shipping Info', class: {'md-raised': false, 'md-accent': false}}
     ];
+
     this.selected = 'Orders';
 
     this.select = (idx) => {
