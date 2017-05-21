@@ -79,7 +79,7 @@ class MockStoreService {
             return {
                 color: this.chance.color({format: 'name'}),
                 state: this.chance.state(),
-                price: this.chance.floating({fixed: 7, min: 0, max: 300}),
+                price: this.chance.floating({fixed: 2, min: 0, max: 300}),
                 name: this.chance.name(),
                 image: this.chance.pickone(images)
             };
@@ -91,7 +91,18 @@ class MockStoreService {
         const order = {
             id: this.chance.string({length: 10}),
             date: this.chance.date({string: true}),
+            name: this.chance.name(),
+            address: this.chance.address(),
+            city: this.chance.city(),
+            state: this.chance.state(),
+            zip: this.chance.zip()
           };
+
+        // generate credit card info
+        order.ccType = this.chance.cc_type();
+        order.cc = this.chance.cc({type: order.ccType});
+        order.last4 = order.cc.slice(-4);
+
 
         // if given a product list pick a random number of products between 1 and the max
         // and insert it into the order, otherwise randomly generate products and insert a random
@@ -104,12 +115,14 @@ class MockStoreService {
         for(const p of order.products) {
           order.subTotal += p.price;
         }
+        // round to 2 decimal places
+        order.subTotal = Math.round(order.subTotal*100)/100;
 
         // discounts cant be greater than subTotal
         order.discount = this.chance.floating({fixed:2, min: 0, max: order.subTotal});
 
-        // order total equals product totals minues discounts
-        order.total = order.subTotal - order.discount;
+        // order total equals product totals minues discounts, round to two decimal places
+        order.total = Math.round((order.subTotal - order.discount)*100)/100;
         return order;
       }
     });

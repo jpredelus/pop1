@@ -50,8 +50,8 @@ angular.module('paquetApp')
         views: {
           '@':{
             templateUrl: 'app/account/profile/myAccount.html',
-            controller: 'ProfileController',
-            controllerAs: 'profile'
+            controller: 'AccountController',
+            controllerAs: 'account'
           },
           'navbar@': {
             template: ''

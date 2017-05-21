@@ -1,0 +1,39 @@
+md-list-item.order-column(ng-class="{'selected': expand}" layout="row" layout-wrap)
+  div(flex="30")
+    .md-subhead Date
+    div {{order.order.date}}
+  div(flex="30")
+    .md-subhead Order Amount
+    div {{order.order.total}}
+  div(flex="30")
+    .md-subhead Order Number
+    div {{order.order.id}}
+  .column-button(flex="10" ng-init="expand=false")
+    md-button.md-icon-button(flex="" ng-click="expand=!expand")
+      md-icon(ng-class="{'expand': expand}" md-svg-icon="chevron-up")
+  .order-details(layout="row" flex="100" ng-show="expand" css-attr #background="white" #color="rgba(0,0,0,0.87)" layout-wrap layout-padding)
+    div(flex="50" layout="row" layout-wrap)
+      .md-title(flex-offset="0" flex="90") Order Summary
+      div(layout="row" flex-offset="5" flex="100" layout-wrap)
+        .summary(flex="70")
+          .title Merchandise
+          .amount + {{order.order.subTotal}}
+        .summary(flex="70")
+          .title Discount
+          .amount - {{order.order.discount}}
+        .total(flex="70")
+          .title Total
+          .amount {{order.order.total}}
+    .md-title(flex-offset="10" flex="40") Shipping Address
+      .md-body-1
+        p {{order.order.name}}
+          br 
+          | {{order.order.address}}
+          br
+          | {{order.order.city}}, {{order.order.state}}
+          br
+          | {{order.order.zip}}
+
+    div(flex="100")
+      .md-subhead Payment Method
+      .md-body-1 {{order.order.ccType}} Ending in {{order.order.last4}}

@@ -60,7 +60,7 @@ button#tab.md-accent {
     border: 1px solid rgba(0,0,0,.3);
 }
 
-.order-column.even {
+.even .order-column{
   background-color: #ECEFF1;
 }
 
@@ -132,4 +132,34 @@ button#tab.md-accent {
 
 .expand-remove-active {
     transform: rotate(360deg);
+}
+
+.order-details.ng-hide-remove {
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  transform: scaleY(0);
+  -webkit-transform:scaleY(0);
+
+}
+
+.order-details.ng-hide-remove-active {
+  transform: scaleY(1);
+  -webkit-transform:scaleY(1);
+}
+
+.order-details.ng-hide-add {
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  transform: scaleY(1);
+  -webkit-transform:scaleY(1);
+
+}
+
+.order-details.ng-hide-add-active {
+  transform: scaleY(0);
+  -webkit-transform:scaleY(0);
 }

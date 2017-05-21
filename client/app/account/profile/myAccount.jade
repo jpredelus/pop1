@@ -6,14 +6,17 @@ div(layout="row" layout-wrap css-attr #margin-left="30px" ng-cloak)
             img(src="../assets/images/userprofile-1.png")
             .md-body-2 User Name
         div(layout="row" layout-wrap)
-          md-button#tab(flex="100" ng-repeat= "tab in profile.tabs" ng-class="tab.class" ng-click="profile.select($index)") {{tab.name}}
-    .profile-content(flex="70" flex-offset="5" ng-switch="profile.selected")
+          md-button#tab(flex="100" ng-repeat= "tab in account.tabs" ng-class="tab.class" ng-click="account.select($index)") {{tab.name}}
+    .profile-content(flex="70" flex-offset="5" ng-switch="account.selected")
       div(ng-switch-when="Profile")
         .md-display-1.raleway Profile
-        div(ng-include="'app/account/profile/partials/profile.html'")
+        div(ng-include="'app/account/profile/partials/account.html'")
       div(ng-switch-when="Orders")
         .md-display-1.raleway Orders
-        div(ng-include="'app/account/profile/partials/orders.html'")
+        div(layout="row" css-attr #margin-top="20px" ng-cloak)
+          div(flex="90")
+            md-list
+              order(ng-repeat="o in account.orders" order="o" ng-class-even="'even'")
       div(ng-switch-when="Shipping Info")
         .md-display-1.raleway Shipping Info
       

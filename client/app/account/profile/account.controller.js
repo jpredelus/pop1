@@ -1,13 +1,13 @@
-class ProfileController {
+class AccountController {
 
   constructor(lodash, MockStore) {
     this.tabs = [
-    {name: 'Profile', class: {'md-raised': false, 'md-accent': false}},
-    {name: 'Orders', class: {'md-raised': true, 'md-accent': true}},
+    {name: 'Profile', class: {'md-raised': true, 'md-accent': true}},
+    {name: 'Orders', class: {'md-raised': false, 'md-accent': false}},
     {name: 'Shipping Info', class: {'md-raised': false, 'md-accent': false}}
     ];
-
-    this.selected = 'Orders';
+    this.orders = MockStore.createOrders(4,3);
+    this.selected = 'Profile';
 
     this.select = (idx) => {
       const selTab = this.tabs[idx];
@@ -27,4 +27,4 @@ class ProfileController {
 }
 
 angular.module('paquetApp')
-  .controller('ProfileController', ProfileController);
+  .controller('AccountController', AccountController);
