@@ -1,0 +1,19 @@
+div(layout="row" css-attr #margin-top="20px")
+  div(flex="65" ng-init="edit=false" layout="row" layout-wrap)
+    .md-heading.raleway(flex="100" css-attr #margin-bottom="30px") Shipping Address
+    md-input-container.profile-input(flex="100")
+      label Address
+      input(model="user.address" ng-disabled="!edit")
+    md-input-container.profile-input(flex="30")
+      label City
+      input(model="user.city" ng-disabled="!edit")
+    md-input-container.profile-input(flex-offset="5" flex="30")
+      label State
+      md-select(ng-model="user.model" ng-disabled="!edit")
+        md-option(ng-repeat="s in account.states" value="{{s}}") {{s}}
+    md-input-container.profile-input(flex-offset="5" flex="30")
+      label Zipcode
+      input(model="user.zip" ng-disabled="!edit")
+    a.pointer(ng-switch="edit" ng-click="edit=!edit")
+      span(ng-switch-when="false") Edit
+      span(ng-switch-when="true") Save
