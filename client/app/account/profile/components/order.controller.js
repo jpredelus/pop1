@@ -1,8 +1,16 @@
 'use strict';
 
 class OrderController {
-  constructor() {
-    
+  constructor($animate, $timeout) {
+    // Stops animation from firing on page load
+    this.$onInit = () => {
+      $animate.enabled(false);
+    };
+
+    // Enables animations once component is finished loading
+    $timeout(()=> {
+      $animate.enabled(true);
+    });
   }
 }
 
