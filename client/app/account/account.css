@@ -1,3 +1,16 @@
+/*Login Modal Styling*/
+
+.login-modal-header {
+  top: 15px;
+  margin-left: 25px;
+  font-size: 1.5em;
+  position: relative;
+  color: #AD1457;
+  font-weight: 400;
+}
+
+/* Signup Modal Styling */
+
 .signup {
     margin: 20px auto;
 }

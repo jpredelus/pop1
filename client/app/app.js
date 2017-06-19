@@ -12,8 +12,8 @@ angular.module('paquetApp', ['paquetApp.auth', 'paquetApp.admin', 'paquetApp.hom
             'default': '900'
 
     })
-    .primaryPalette('blue', {
-        'default': '900'
+    .primaryPalette('pink', {
+        'default': '700'
     });
     //Setting svg icon sets
     $mdIconProvider.iconSet('brand:logo', './assets/SVGS/ANZUG_LOGO.svg', 48);

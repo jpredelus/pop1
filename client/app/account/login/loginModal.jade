@@ -1,10 +1,8 @@
-md-dialog(aria-label='Login' flex="50")
-  md-toolbar
-    .md-toolbar-tools
-      h2 Login
-      span(flex='')
-      md-button.md-icon-button(ng-click='login.cancel()')
-        md-icon(md-svg-icon='close', aria-label='Close dialog')
+md-dialog(aria-label='Login' flex="25")
+  div(layout='row')
+    span.login-modal-header(flex='') Login
+    md-button.md-icon-button(ng-click='login.cancel()')
+      md-icon(md-svg-icon='close', aria-label='Close dialog')
   md-dialog-content
     .md-dialog-content
       form.form(name='loginForm', ng-submit='login.login(loginForm)', novalidate='')
