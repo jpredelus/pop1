@@ -21,7 +21,20 @@ class NavbarController {
         clickOutsideToClose:true,
         fullscreen: false,
         onRemoving: (ev, promise) => {
-            console.log('closing');
+            this.stateName = $state.current.name;
+          }
+      });
+    };
+    this.signup = (ev) => {
+      $mdDialog.show({
+        controller: 'SignupController',
+        controllerAs: 'vm',
+        templateUrl: 'app/account/signup/signup.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:false,
+        fullscreen: true,
+        onRemoving: (ev, promise) => {
             this.stateName = $state.current.name;
           }
       });

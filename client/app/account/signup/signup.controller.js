@@ -3,9 +3,12 @@
 class SignupController {
   //end-non-standard
 
-  constructor(Auth, $state) {
+  constructor(Auth, $state, $mdDialog) {
       this.Auth = Auth;
       this.$state = $state;
+      this.close = ()=> {
+        $mdDialog.cancel();
+      }
     }
     //start-non-standard
 

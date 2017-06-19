@@ -80,7 +80,7 @@ class HomeController {
 
         //options for fullpagejs module
         this.options = { 
-        navigation : true, 
+        navigation : false, 
         afterLoad : afterLoadFn,
         scrollingSpeed: 500
         }; 

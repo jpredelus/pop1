@@ -1,24 +1,26 @@
-.center(flex="15" css-attr #margin-top="20px" ng-click="vm.$state.go('home')")
-  md-icon.signup-logo(md-svg-icon="brand:logo" aria-label="logo")
-  span.signup-logotext ANZUG
-md-card.signup(flex-offset="5" flex="25" layout="row" layout-wrap layout-padding)
-  md-card-title(flex="100")
-    md-card-title-text
-      span.center.md-headline Create An Account
-  md-card-content(flex="100" layout="row" layout-wrap)
-    md-input-container(flex="100")
-      label First Name
-      input(ng-model='user.fName')
-    md-input-container(flex="100")
-      label Last Name
-      input(ng-model='user.lName')
-    md-input-container(flex="100")
-      label Email
-      input(ng-model='user.email', type='email')
-    md-input-container(flex="100")
-      label Password
-      input(ng-model='user.password' type="password")
-    md-input-container(flex="100")
-      label Repeat Password
-      input(ng-model='testPass' type="password")
-    button.md-button.md-raised.md-accent(type="submit" flex-offset="20") Create Anzug Account
+md-dialog#modal-fullscreen
+  .signup-modal-header(css-attr #margin-top="20px" ng-click="vm.close()")
+    md-icon.signup-logo(md-svg-icon="brand:logo" aria-label="logo")
+    span.signup-logotext ANZUG
+  md-dialog-content.content-fix.center
+    md-card.signup(flex-offset="15" flex="25" layout="row" layout-wrap layout-padding)
+      md-card-title(flex="100")
+        md-card-title-text
+          span.center.md-headline Create An Account
+      md-card-content(flex="100" layout="row" layout-wrap)
+        md-input-container(flex="100")
+          label First Name
+          input(ng-model='user.fName')
+        md-input-container(flex="100")
+          label Last Name
+          input(ng-model='user.lName')
+        md-input-container(flex="100")
+          label Email
+          input(ng-model='user.email', type='email')
+        md-input-container(flex="100")
+          label Password
+          input(ng-model='user.password' type="password")
+        md-input-container(flex="100")
+          label Repeat Password
+          input(ng-model='testPass' type="password")
+        button.md-button.md-raised.md-accent(type="submit" flex-offset="20") Create Anzug Account

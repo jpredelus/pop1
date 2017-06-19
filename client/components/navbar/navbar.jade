@@ -20,7 +20,7 @@ div(ng-controller="NavbarController", md-theme="nav.getTheme()" md-theme-watch="
           label Login
           
 
-      md-nav-item.nav-icon-item(md-nav-item="signup" ng-hide='nav.isLoggedIn()', md-nav-sref="signup", name="signup")
+      md-nav-item.nav-icon-item(md-nav-item="signup" ng-hide='nav.isLoggedIn()', md-nav-click='nav.signup($event)', name="signup")
         div
           md-icon(md-svg-icon="account-plus")
           label Sign Up

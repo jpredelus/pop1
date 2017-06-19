@@ -17,21 +17,6 @@ angular.module('paquetApp')
           }
         }
       })
-      .state('signup', {
-        parent: 'root',
-        url: '/signup',
-        views: {
-          '@':{
-            templateUrl: 'app/account/signup/signup.html',
-            controller: 'SignupController',
-            controllerAs: 'vm'
-          },
-          'navbar@': {
-            template: ''
-          }
-        }
-        
-      })
       .state('settings', {
         parent: 'root',
         url: '/settings',
