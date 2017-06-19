@@ -12,6 +12,21 @@ md-nav-bar span {
     font-weight: 500;
     font-size: 20px;
 }
+.nav-icon-item button,a {
+    padding: 1px 0px 0px 0px !important;
+}
+
+.nav-icon-item label{
+    display: block;
+    bottom: 2px;
+    font-size: 15px;
+    position: relative;
+}
+.nav-icon-item svg{
+    margin-top: 2px;
+    height: 23px;
+    width: 23px;
+}
 
 .logotext {
     cursor: pointer;
