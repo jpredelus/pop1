@@ -29,8 +29,12 @@ angular.module('paquetApp')
         },
         authenticate: true
       })
+      .state('user', {
+          parent: 'root',
+          url: '/user',
+        })
       .state('profile', {
-        parent: 'root',
+        parent: 'user',
         url: '/profile',
         views: {
           '@':{
@@ -42,7 +46,6 @@ angular.module('paquetApp')
             template: ''
           }
         }
-        
       });
   })
   .run(function($rootScope) {
