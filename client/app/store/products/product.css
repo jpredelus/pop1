@@ -12,3 +12,45 @@
     margin-right: auto;
     display: block;
 }
+
+a.star-label {
+  color: #757575;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+a.star-label:hover {
+  color: #000;
+}
+
+.group {
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 3px 15px 3px 15px;
+    color: rgb(49, 46, 46);
+    background-color: rgba(224, 224, 224, 0.96);
+    text-transform: none;
+    font-weight: 400;
+    min-width:100px;
+    border-radius: 0;
+    border-left: 1px solid rgba(230, 230, 230, 0.96);
+    border-right: 1px solid rgba(230, 230, 230, 0.96);
+}
+
+.group-menu {
+  margin-top: -20px;
+  animation-duration: 0.4s;
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.review-heading {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  font-family: raleway;
+  text-align: center;
+}
+
+.review-name {
+  overflow-wrap: break-word;
+  margin: auto;
+}

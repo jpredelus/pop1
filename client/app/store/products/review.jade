@@ -1,0 +1,17 @@
+md-card
+  md-card-title 
+    md-card-title-text(layout="row" layout-fill layout-wrap)
+      div(flex="40" layout="row")
+        md-button.md-fab.md-accent
+          .md-headline {{review.data.name | limitTo : 1 | uppercase}}
+        .review-name(flex="") {{review.data.name}}
+      div(flex-offset="5" flex="45" css-attr #margin="auto")
+        jk-rating-stars.product-rating(read-only="true" rating="review.data.score")
+        .star-label(href="#") {{review.data.date}}
+      .md-headline.center(css-attr #margin-top="15px") Review Title
+  md-card-content
+    p
+    |{{review.data.review}}
+
+
+

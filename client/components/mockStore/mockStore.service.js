@@ -135,6 +135,25 @@ class MockStoreService {
     return orders;
 
   }
+
+  // Method that randomly generates reviews the max paramter sets the highest score
+  createReviews(amount, max = 5) {
+    this.chance.mixin({
+        review: ()=>  { 
+            return {
+                name: this.chance.name(),
+                score: this.chance.floating({min: 0, max: max, fixed: 2}),
+                date: this.chance.date({string: true}),
+                review: this.chance.paragraph()
+            };
+        }
+    });
+    const reviews = [];
+    for(let i = 0; i < amount; i++){
+      reviews.push(this.chance.review());
+    }
+    return reviews;
+  }
 }
 
 angular.module('mockStore', ['chance', 'ngLodash'])

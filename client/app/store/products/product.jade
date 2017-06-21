@@ -1,6 +1,27 @@
-md-content(layout="row", layout-padding layout-fill )
-    div(flex="55" css-attr #padding="20px")
-        jk-carousel.product(data="product.slides", item-template-url="'app/store/products/productCarousel.html'" max-width="600" max-height="400" current-index="0")
-    div(flex="45")
-         h1.md-headline Burgundy Macy's Polo Ralph Lauren Suit
+md-content(layout="row", layout-padding layout-wrap layout-fill css-attr #background-color="#fff")
+    div(flex="65" css-attr #padding="20px")
+        jk-carousel.product(data="product.slides", item-template-url="'app/store/products/productCarousel.html'" max-width="{{product.caroWidth}}" max-height="{{product.caroHeight}}" current-index="0" auto-slide="true")
+    div(flex="35" layout-wrap layout="row" layout-fill layout-padding)
+        .md-headline(flex="100") Burgundy Macy's Polo Ralph Lauren Suit
+        div(flex="100")
+          jk-rating-stars.product-rating(read-only="true" rating="product.reviewAvg")
+          a.star-label(href="#reviews") {{product.reviews.length}} Reviews
+        p.product-desc(flex="100")
+          |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
+        md-button.group.md-raised(ng-class="{'md-accent': !product.size}" flex="50" ng-click="product.show = !product.show") 
+          span(ng-if="!product.size") Select Size
+          span(ng-if="product.size") {{product.size | uppercase}}
+          md-icon(ng-class="{'expand': product.show}" md-svg-icon="chevron-up")
+        md-button.group.md-raised(flex="50" ng-class="{'md-accent': product.size,}") Add to Bag
+        .animated.group-menu.md-whiteframe-4dp(ng-class="product.fadeInOut()" ng-show="product.show" flex="100" layout="row" layout-wrap layout-fill)
+          md-button.md-raised(md-colors="{'background-color': 'grey'}" ng-repeat="size in ['small', 'medium','large']" flex="25" ng-click="product.selectSize(size)") {{ size | uppercase}}
+        div(flex="100")
+          .md-subhead Shipping Details
+          p 
+            |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    div(flex="100" layout-fill layout-wrap layout="row" id="reviews")
+      .md-display-2.review-heading(flex="100") Reviews
+      .md-heading(flex-offset="10" flex="15" css-attr #padding="20px") Recent Reviews
+      span(flex='75')
+      review-card.center(ng-repeat="review in product.reviews" flex="33" data="review")
