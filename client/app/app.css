@@ -63,6 +63,10 @@ textarea {
   margin: 0 auto;
 }
 
+.center-all {
+  margin: auto;
+}
+
 .text-center {
   text-align: center;
 }

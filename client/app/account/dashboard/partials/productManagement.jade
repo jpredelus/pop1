@@ -1,0 +1,18 @@
+div(layout="row" layout-wrap layout-fill)
+  .animated.fadeInDown(flex="100" layout="row")
+    md-card(flex="30" md-colors="{'color': 'primary'}")
+      md-card-title
+        md-card-title-text.md-headline.text-center Number of Products
+      md-card-content(layout="row")
+        div.product-kpi {{ctrl.productNum}}
+    md-card(flex="30" md-colors="{'color': 'accent'}")
+      md-card-title
+        md-card-title-text.md-headline.text-center Products Rented
+      md-card-content(layout="row")
+        canvas#doughnut.chart.chart-doughnut(chart-data='ctrl.chartData' chart-labels="['Rented', 'Not']" flex="40" chart-colors="['#B71C1C', '#DCDCDC']")
+        div.md-display-3.raleway.center-all.text-center(flex="60") {{100*ctrl.percentRented | number:0}} %
+    md-card(flex="30" md-colors="{'color': 'warn'}")
+      md-card-title
+        md-card-title-text.md-headline.text-center Revenue per Product
+      md-card-content(layout="row" layout-wrap)
+        .product-kpi {{ctrl.revPerProduct | currency }}

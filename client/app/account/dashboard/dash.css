@@ -8,6 +8,11 @@
   color: inherit;
 }
 
+.product-kpi {
+    margin: 30px auto;
+    font-size: 3.5em;
+}
+
 /*Modal Styling*/
 
 .info {

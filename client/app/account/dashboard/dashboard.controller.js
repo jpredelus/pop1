@@ -1,12 +1,12 @@
 class DashboardController {
   constructor(lodash) {
     this.tabs = [
-    {name: 'Orders', class: {'md-raised': true, 'md-accent': true}},
+    {name: 'Orders', class: {'md-raised': false, 'md-accent': false}},
     {name: 'Sales', class: {'md-raised': false, 'md-accent': false}},
-    {name: 'Products', class: {'md-raised': false, 'md-accent': false}},
+    {name: 'Products', class: {'md-raised': true, 'md-accent': true}},
     {name: 'Profile', class: {'md-raised': false, 'md-accent': false}}
     ];
-    this.selected = 'Orders';
+    this.selected = 'Products';
     this.select = (idx) => {
       const selTab = this.tabs[idx];
       this.selected = selTab.name;
