@@ -1,0 +1,70 @@
+.kpi.jk-rating-stars-container .button md-icon {
+  color: inherit;
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.kpi a {
+  color: inherit;
+}
+
+/*Modal Styling*/
+
+.info {
+  background-color: #ECEFF1;
+  padding: 20px;
+}
+
+/*Table Animations*/
+
+.test {
+  position: relative;
+  height: 64px;
+}
+
+.dash-margin {
+  margin-top: 40px;
+}
+.slideIn {
+  position: absolute;
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.slideIn.ng-enter {
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
+}
+.slideIn.ng-enter-active {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.slideIn.ng-leave {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.slideIn.ng-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0); 
+}
+
+.fadeDownUp {
+  animation-duration: .4s;
+}
+
+.fadeDownUp.ng-hide-add {
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  opacity: 1;
+}
+
+.fadeDownUp.ng-hide-add-active {
+  opacity: 0;
+}
+
+.fadeDownUp.ng-hide-remove {
+  transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  opacity: 0;
+}
+
+.fadeDownUp.ng-hide-remove-active {
+  opacity: 1;
+}

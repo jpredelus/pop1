@@ -33,6 +33,20 @@ angular.module('paquetApp')
           parent: 'root',
           url: '/user',
         })
+      .state('dash', {
+        parent: 'user',
+        url: '/dash',
+        views: {
+          '@': {
+            templateUrl: 'app/account/dashboard/dashboard.html',
+            controller: 'DashboardController',
+            controllerAs: 'dash'
+          },
+          'navbar@' : {
+            template: ''
+          }
+        }
+      })
       .state('profile', {
         parent: 'user',
         url: '/profile',

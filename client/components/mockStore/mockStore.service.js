@@ -26,7 +26,7 @@ class MockStoreService {
                 state: this.chance.pickone(set.state),
                 price: this.chance.pickone(set.price),
                 name: this.chance.pickone(set.name),
-                image: this.chance.pickone(set.image)
+                image: this.chance.pickone(set.image),
             };
         }
     });
@@ -44,7 +44,7 @@ class MockStoreService {
     for(let x of this._.range(random)) {
         productSet.color.push(this.chance.color({format: 'name'}));
         productSet.state.push(this.chance.state());
-        productSet.price.push(this.chance.dollar({max: 300}));
+        productSet.price.push(this.chance.floating({fixed: 2, min: 0, max: 300}));
         productSet.name.push(this.chance.name());
     }
     // create products from set and push into products collection
@@ -95,7 +95,8 @@ class MockStoreService {
             address: this.chance.address(),
             city: this.chance.city(),
             state: this.chance.state(),
-            zip: this.chance.zip()
+            zip: this.chance.zip(),
+            status: this.chance.pickone(['Shipped', 'Pending Approval', 'Approved'])
           };
 
         // generate credit card info

@@ -1,0 +1,61 @@
+div(layout="row" layout-wrap layout-fill)
+  .fadeDownUp(flex="100" layout="row" ng-show="search.status != 'Pending'")
+    md-card(flex="30" md-colors="{'color': 'primary'}")
+      md-card-title
+        md-card-title-text.md-headline Revenue
+      md-card-content
+        div.md-display-3.raleway.text-center {{ctrl.revenue | currency}}
+    md-card(flex="30" md-colors="{'color': 'accent'}")
+      md-card-title
+        md-card-title-text.md-headline Completed Sales
+      md-card-content
+        div.md-display-3.raleway.text-center {{ctrl.totalSales}}
+    md-card(flex="30" md-colors="{'color': 'warn'}")
+      md-card-title
+        md-card-title-text.md-headline Average Rating
+      md-card-content(layout="row" layout-wrap)
+        div(flex="50")
+          jk-rating-stars.kpi(read-only="true" rating="ctrl.ratingsAvg")
+        .md-display-3.raleway.text-center(flex="50") {{ctrl.ratingsAvg | number:2}}
+  
+  md-switch.dash-margin(ng-switch="search.status" ng-model="search.status" aria-label="Order Switch" ng-true-value="" ng-false-value="'Pending'" class="md-warn" flex="100") 
+    span.dash-margin(ng-switch-default) Show Pending Transactions
+    span.dash-margin(ng-switch-when="Pending") Show All Transactions
+  
+  div.test(ng-switch="search.status" flex="50")
+    .slideIn.md-display-1.raleway.dash-margin(ng-switch-when="Pending") Pending Transactions
+    .slideIn.md-display-1.raleway.dash-margin(ng-switch-default) Transactions 
+      .md-subhead from {{ ctrl.startDate | amDateFormat:'MMMM Do YYYY'}} to {{ ctrl.endDate | amDateFormat:'MMMM Do YYYY'}}
+  md-datepicker.dash-margin(ng-model="ctrl.startDate" flex="25" ng-disabled="ctrl.disable(search.status)")
+  md-datepicker.dash-margin(ng-model="ctrl.endDate" flex-offset="0"  flex="20" ng-disabled="ctrl.disable(search.status)")
+  div(flex="100" layout="row" layout-wrap css-attr #margin-top="30px" #margin-bottom="-25px")
+    md-input-container( flex="50")
+      label General Search
+      input(ng-model="search2" ng-disabled="ctrl.disable(search.status)")
+    md-input-container(flex="50" ng-disabled="ctrl.disable(search.status)")
+      label Search by ID
+      input(ng-model="search.id" ng-disabled="ctrl.disable(search.status)")
+
+
+  md-table-container
+    table.md-table
+      thead.md-head
+        tr.md-row
+          th.md-column Date
+          th.md-column Order ID
+          th.md-column Customer
+          th.md-column Item Name
+          th.md-column Item Size
+          th.md-column Status
+          th.md-column View Order
+        tbody.md-body
+          tr.md-row(ng-repeat="o in ctrl.orders | dateRange:ctrl.startDate:ctrl.endDate | filter:search | filter:search2 as filterResult" filter="{{ctrl.filteredOrders = filterResult}}")
+            td.md-cell {{o.date}}
+            td.md-cell {{o.id}}
+            td.md-cell {{o.name}}
+            td.md-cell {{o.products[0].name}}
+            td.md-cell {{o.products[0].price}}
+            td.md-cell {{o.status}}
+            td.md-cell
+              md-button.md-icon-button.md-primary(ng-click="ctrl.openOrder($event, o)")
+                md-icon(md-svg-icon="vector-arrange-above")

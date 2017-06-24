@@ -1,0 +1,50 @@
+md-dialog(aria-label='Login' flex="50")
+  div(layout='row')
+    span(flex='')
+    md-button.md-icon-button(ng-click='order.cancel()')
+      md-icon(md-svg-icon='close', aria-label='Close dialog')
+  md-dialog-content
+    .md-dialog-content(layout="row" layout-wrap)
+      .md-headline(flex="50") Product Information
+      .md-headline(flex="50") Order Information
+      .info(flex="50" layout="row" layout-wrap)
+        .summary(flex="100")
+          .title 
+            strong Product:
+            span &nbsp; {{ctrl.product.name}}
+        .summary(flex="100")
+          .title
+            strong Price:
+            span &nbsp; {{ctrl.product.price}}
+        .summary(flex="100")
+          .title
+            strong Size: 
+            span &nbsp; {{ctrl.product.price}}
+      .info(flex="50" layout="row" layout-wrap)
+        .summary(flex="100")
+          .title 
+            strong Order Id:
+            span &nbsp; {{ctrl.order.id}}
+        .summary(flex="100")
+          .title
+            strong Customer:
+            span &nbsp; {{ctrl.order.name}}
+        .summary(flex="100")
+          .title
+            strong Status: 
+            span &nbsp; {{ctrl.order.status}}
+        .summary
+          .md-title Shipping Info
+          .md-body-1
+            p {{ctrl.order.name}}
+              br 
+              | {{ctrl.order.address}}
+              br
+              | {{ctrl.order.city}}, {{ctrl.order.state}}
+              br
+              | {{ctrl.order.zip}}
+      .md-subhead(css-attr #margin-top="10px" flex="100") Update Order Status
+      md-input-container(flex="50")
+        label Order Status
+        md-select(ng-model="ctrl.order.status")
+          md-option(ng-repeat="s in ctrl.statuses" value ="{{s}}") {{s}}
