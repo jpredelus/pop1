@@ -48,6 +48,11 @@ textarea {
 /**
  * App-wide Styles
  */
+
+.md-button.md-small {
+    min-width: 1%;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -57,6 +62,12 @@ textarea {
 
 .md-icon-button:hover {
   opacity: 1
+}
+
+.centerh {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .center {

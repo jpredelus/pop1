@@ -16,3 +16,12 @@ div(layout="row" layout-wrap layout-fill)
         md-card-title-text.md-headline.text-center Revenue per Product
       md-card-content(layout="row" layout-wrap)
         .product-kpi {{ctrl.revPerProduct | currency }}
+  .dash-margin.md-display-1.raleway(flex="100") My Products
+  md-content(layout="column", layout-padding layout-fill css-attr #overflow="hidden" #min-height="70vh")
+    div.loading-items.animated.fadeIn(ng-show="list.loading")
+        md-progress-circular.md-accent(css-attr #left="50%" #top="100px" md-mode="indeterminate")
+    div(layout="row" flex="25" flex-offset="5" layout-fill layout-wrap)
+        .md-title(ng-if="ctrl.products.length < 1") You have no products yet
+        div(ng-repeat = "i in [0,1,2,3]" flex="25")
+            product-card(ng-repeat = "p in ctrl.rows[i]" product="p" ng-click="ctrl.openProduct($event, p)")
+

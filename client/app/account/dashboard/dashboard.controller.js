@@ -2,7 +2,6 @@ class DashboardController {
   constructor(lodash) {
     this.tabs = [
     {name: 'Orders', class: {'md-raised': false, 'md-accent': false}},
-    {name: 'Sales', class: {'md-raised': false, 'md-accent': false}},
     {name: 'Products', class: {'md-raised': true, 'md-accent': true}},
     {name: 'Profile', class: {'md-raised': false, 'md-accent': false}}
     ];

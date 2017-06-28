@@ -6,8 +6,6 @@ class MockStoreService {
   constructor(chance, lodash) {
     this.chance = chance;
     this._ = lodash;
-    this.products = [];
-    this.orders = [];
     this.images = ['blacksuit.jpeg', 'bwsuit.jpeg', 'blackshoes.jpeg','graysuit.jpeg','redsuit.jpeg',
     'blackman.jpg','blacktux.jpg','bluesuit.jpg','redtie.jpg','whitesuit.jpg'];
   }
@@ -19,6 +17,7 @@ class MockStoreService {
   */ 
   createProducts(amount, random) {
     random = random ? random : 10;
+    const products = [];
     this.chance.mixin({
         product: (set)=> {
             return {
@@ -49,9 +48,9 @@ class MockStoreService {
     }
     // create products from set and push into products collection
     for(let i of this._.range(amount)) {
-        this.products.push(this.chance.product(productSet));
+        products.push(this.chance.product(productSet));
     }
-    return this.products;
+    return products;
 
   }
   /** Method that randomly generates orders

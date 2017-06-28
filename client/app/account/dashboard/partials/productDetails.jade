@@ -1,0 +1,43 @@
+md-dialog(aria-label='Login' flex="50")
+  div(layout='row')
+    span(flex='')
+    md-button.md-icon-button(ng-click='order.cancel()')
+      md-icon(md-svg-icon='close', aria-label='Close dialog')
+  md-dialog-content(layout="row" layout-wrap layout-padding)
+    .md-display-1.raleway(flex="80" )
+      span(ng-hide="edit") {{ctrl.product.name}}
+    md-button.md-icon-button(flex="5" ng-click="edit = !edit")
+      md-icon(md-svg-icon="pencil")
+    span(flex="5") Edit
+    md-input-container.md-block(flex="80" ng-show="edit")
+        label Name
+        input(ng-model="ctrl.product.name")
+    .gallery-container(flex-offset="5" flex="95" layout="row" layout-wrap) 
+      .raleway.md-headline(flex="100" css-attr #margin-bottom="5px") Photos
+      .gallery-box(flex="25")
+        .md-subhead {{::ctrl.product.image}} 
+        .thumbnail
+          img(src="../assets/images/suits/{{::ctrl.product.image}}")
+        md-button.md-warn.centerh(ng-show="edit") Delete Image
+    form(flex-offset="5" flex="90" layout-wrap layout="row" ng-show="edit")
+      md-input-container.md-block(flex="25")
+        label Color
+        input(ng-model="ctrl.product.color")
+      md-input-container.md-block(flex-offset="5" flex="25")
+        label Price
+        input(ng-model="ctrl.product.price" type="number" step=".01")
+      md-input-container(flex="100")
+        label Product Description
+        textarea(ng-model="ctrl.product.price" md-maxlength="300")
+      md-button.md-primary.md-raised(ng-click="edit = false") Save
+      md-button.md-raised.md-warn(ng-click="edit = false") Cancel
+    div(flex-offset="5" flex="90" layout-wrap layout="row" ng-hide="edit")
+      span(flex="100") 
+        strong Color: &nbsp;
+        | {{ctrl.product.color}}
+      span(flex="90") 
+        strong Price: &nbsp;
+        | {{ctrl.product.price}}
+      span(flex="100") 
+        strong Description: &nbsp;
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
