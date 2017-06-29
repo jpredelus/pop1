@@ -1,5 +1,5 @@
 div(layout="row" layout-wrap layout-fill)
-  .animated.fadeInDown(flex="100" layout="row")
+  .animated#kpirow(flex="100" layout="row")
     md-card(flex="30" md-colors="{'color': 'primary'}")
       md-card-title
         md-card-title-text.md-headline.text-center Number of Products
@@ -18,10 +18,10 @@ div(layout="row" layout-wrap layout-fill)
         .product-kpi {{ctrl.revPerProduct | currency }}
   .dash-margin.md-display-1.raleway(flex="100") My Products
   md-content(layout="column", layout-padding layout-fill css-attr #overflow="hidden" #min-height="70vh")
-    div.loading-items.animated.fadeIn(ng-show="list.loading")
-        md-progress-circular.md-accent(css-attr #left="50%" #top="100px" md-mode="indeterminate")
-    div(layout="row" flex="25" flex-offset="5" layout-fill layout-wrap)
+    div.loading-items(ng-show="ctrl.hideall")
+        md-progress-circular.md-accent(css-attr #left="50%" #top="100px" md-mode="indeterminate" ng-disabled="!ctrl.hideall")
+    div.animated.fadeIn(layout="row" layout-fill layout-wrap ng-hide="ctrl.hideall")
         .md-title(ng-if="ctrl.products.length < 1") You have no products yet
         div(ng-repeat = "i in [0,1,2,3]" flex="25")
-            product-card(ng-repeat = "p in ctrl.rows[i]" product="p" ng-click="ctrl.openProduct($event, p)")
+            product-card(ng-repeat = "p in ctrl.rows[i]" product="p" ng-click="ctrl.openProduct($event, p)" promise="p.resolve")
 

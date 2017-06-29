@@ -6,7 +6,7 @@ div(layout="row" layout-wrap css-attr #margin-left="30px" ng-cloak)
             img(src="../assets/images/userprofile-1.png")
             .md-body-2 User Name
         div(layout="row" layout-wrap)
-          md-button#tab(flex="100" ng-repeat= "tab in dash.tabs" ng-class="tab.class" ng-click="dash.select($index)") {{tab.name}}
+          md-button#tab(flex="100" ng-repeat= "tab in dash.tabs" ng-class="tab.class" ng-click="dash.select($index)" md-ink-ripple="false") {{tab.name}}
     .profile-content(flex="70" flex-offset="5" ng-switch="dash.selected" css-attr #min-height="35em")
       div(ng-switch-when="Profile")
         .md-display-1.raleway Profile

@@ -1,17 +1,17 @@
 md-dialog(aria-label='Login' flex="50")
   div(layout='row')
     span(flex='')
-    md-button.md-icon-button(ng-click='order.cancel()')
+    md-button.md-icon-button(ng-click='ctrl.cancel()')
       md-icon(md-svg-icon='close', aria-label='Close dialog')
   md-dialog-content(layout="row" layout-wrap layout-padding)
     .md-display-1.raleway(flex="80" )
       span(ng-hide="edit") {{ctrl.product.name}}
+      md-input-container.md-block(flex="80" ng-show="edit")
+        label Name
+        input(ng-model="ctrl.product.name")
     md-button.md-icon-button(flex="5" ng-click="edit = !edit")
       md-icon(md-svg-icon="pencil")
     span(flex="5") Edit
-    md-input-container.md-block(flex="80" ng-show="edit")
-        label Name
-        input(ng-model="ctrl.product.name")
     .gallery-container(flex-offset="5" flex="95" layout="row" layout-wrap) 
       .raleway.md-headline(flex="100" css-attr #margin-bottom="5px") Photos
       .gallery-box(flex="25")

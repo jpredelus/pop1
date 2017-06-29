@@ -1,14 +1,14 @@
 'use strict';
 
 class ProductManagementController {
-  constructor(MockStore, metrics, $mdDialog,$scope) {
+  constructor(MockStore, metrics, $mdDialog,$scope, $q, $animate,$timeout) {
     // Get Order Data
+    const elem = angular.element(document.querySelector('#kpirow'))[0];
+    const animPromise = $animate.addClass(elem, 'fadeInDown');
+    this.hideall = true;
     this.products = MockStore.createProducts(25,25);
     this.orders = MockStore.createOrders(15,1,this.products);
     this.orders = metrics.getActiveOrders(this.orders);
-    this.$onDestroy = ()=> {
-      console.log('Products destroyed',this);
-    };
     this.createRows = (items) => {
             const rows = [[],[],[],[]];
             let i = 0;
@@ -18,7 +18,19 @@ class ProductManagementController {
             }
             return rows;
         };
+    this.promises = [];
+    let deferreds = [];
+    for(let x of this.products) {
+      let defer = $q.defer();
+      x.resolve = defer.resolve;
+      deferreds.push(defer.promise);
+    }
+    deferreds.push(animPromise);
     
+
+    $q.all(deferreds).then((x)=> {
+      $timeout(()=> {this.hideall = false;},900);
+    });
     // Calculate Metrics
     this.getMetrics =(orders, products) => {
       this.revenue = metrics.getRevenue(orders);

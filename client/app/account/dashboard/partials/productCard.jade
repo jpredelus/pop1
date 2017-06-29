@@ -1,5 +1,5 @@
 md-card.shop-card(ng-class="{'md-whiteframe-5dp': hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false")
-    img.md-card-img(src="../assets/images/suits/{{::ctrl.product.image}}")
+    img.md-card-img(src="../assets/images/suits/{{::ctrl.product.image}}" img-defer="ctrl.promise")
     md-card-content(layout="column" css-attr #padding="12px")
         div(layout="row")
             span(flex="85") {{::ctrl.product.name}}

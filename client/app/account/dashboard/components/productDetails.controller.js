@@ -1,14 +1,13 @@
 'use strict';
 
 class ProductDetailsController {
-  constructor() {
-
+  constructor($mdDialog) {
+    this.cancel = $mdDialog.cancel;
   }
 }
 
 class ProductCardController {
     constructor() {
-
     }
 }
 
@@ -17,12 +16,27 @@ angular.module('paquetApp')
 
 
 
-angular.module('paquetApp.store')
+angular.module('paquetApp')
 .component('productCard', {
     templateUrl: 'app/account/dashboard/partials/productCard.html',
     controller: ProductCardController,
     controllerAs: 'ctrl',
     bindings: {
-        product: '<'
+        product: '<',
+        promise: '<',
     }
+});
+
+angular.module('paquetApp')
+.directive('imgDefer', ()=> {
+    return {
+        restrict: 'A',
+        scope: {imgDefer: '<'},
+        link: (scope, el, attr) => {
+            
+            el.bind('load', ()=>{
+                scope.imgDefer();
+            });
+        }
+    };
 });
