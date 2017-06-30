@@ -18,3 +18,16 @@
     height: 60px;
     padding-top: 20px;
 }
+
+.store-icon-button {
+  opacity: .8;
+}
+
+.cart-badge {
+    font-size: 18px;
+    position: relative;
+    left: -11px;
+    top: 2px;
+    font-family: "lato", "sans-serif";
+    font-weight: 300;
+}
