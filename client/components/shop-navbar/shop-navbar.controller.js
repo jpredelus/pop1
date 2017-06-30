@@ -7,7 +7,6 @@ class StoreNavbarController {
         {state: 'Suits', title: 'Suits'},
         {state: 'Shirts', title: 'Shirts'},
         {state: 'Shoes', title: 'Shoes'},
-
         ];
     }
 }

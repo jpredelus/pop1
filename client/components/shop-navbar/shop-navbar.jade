@@ -1,12 +1,12 @@
 md-content.no-scroll(layout="row")
-    md-nav-bar.store-nav(md-selected-nav-item='stateName', nav-bar-aria-label='navigation links' flex="100")
+    md-nav-bar.store-nav(md-no-ink-bar="true" md-selected-nav-item='stateName', nav-bar-aria-label='navigation links' flex="100")
       li
         md-icon.store-logo.icon-fix(md-svg-icon="brand:logo" aria-label="logo")
         span.store-logo-text.raleway(ui-sref='home', name='home') ANZUG
   
       li(flex="25")
       md-nav-item(ng-repeat='item in nav.menu', md-nav-sref='{{item.state}}', name='{{item.state}}') {{item.title}}
-      li(flex-offset="10" flex="30")
+      li(flex-offset="5" flex="25")
         md-input-container.md-block(css-attr #margin-top="2px")
             label Search Suits
             md-icon(md-svg-icon="magnify")

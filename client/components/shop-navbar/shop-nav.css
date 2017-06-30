@@ -10,6 +10,10 @@
     font-size: 30px;
 }
 
+.store-nav li.md-nav-item {
+  margin-top: 7px;
+}
+
 .store-nav > .md-nav-bar {
     height: 60px;
     padding-top: 20px;
