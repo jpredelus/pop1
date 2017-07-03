@@ -20,7 +20,7 @@
 }
 
 .store-icon-button {
-  opacity: .8;
+  opacity: 1;
 }
 
 .cart-badge {
@@ -30,4 +30,33 @@
     top: 2px;
     font-family: "lato", "sans-serif";
     font-weight: 300;
+}
+
+.cart {
+  position: absolute;
+  z-index: 999;
+  width: 25%;
+  right: 5%;
+  top: 65%;
+  padding: 10px
+}
+
+.cart-chevron {
+  position: relative;
+  top: -20px;
+  left: 35px;
+}
+
+.remove-item {
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.remove-item:hover {
+  opacity: .6;
+}
+
+.checkout span {
+  font-size: 10px;
 }

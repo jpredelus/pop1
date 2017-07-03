@@ -12,6 +12,37 @@ md-content.no-scroll(layout="row")
             md-icon(md-svg-icon="magnify")
             input
       li(flex="10" flex-offset="10" )
-        md-button.md-icon-button.store-icon-button
-          md-icon(md-svg-icon="cart")
-        span.cart-badge
+        span(ng-mouseenter="show=!show" ng-mouseleave="show=!show")
+            md-button.md-icon-button.store-icon-button
+              md-icon(md-svg-icon="cart-outline" md-menu-origin ng-show="!show")
+              md-icon(md-svg-icon="cart" md-menu-origin ng-show="show")
+            span.cart-badge 0
+            .cart-chevron(ng-show="show")
+              md-icon(md-svg-icon="chevron-up")
+            md-card.cart(ng-show="show")
+              md-card-content
+                md-list-item(layout="row" layout-wrap ng-repeat="i in [1,2,3]")
+                  div(flex="30")
+                    img(src="../assets/images/suits/redtie.jpg" width="70%")
+                  div(flex="70" layout="row" layout-wrap css-attr #font-size="12px")
+                    div(flex="65" css-attr #margin-bottom="3px") Marbled Olive Scarf 
+                    div(flex-offset="5" flex="25") $15.99
+                    div(flex="100" css-attr #margin-bottom="3px") Size: Medium
+                    div(flex="100" css-attr #margin-bottom="3px") Color: Red
+                  div(flex="40")
+                    a.remove-item.md-primary Remove Item
+                md-list-item(layout="row")
+                  span.md-body-1(flex="") Subtotal:  $79.99
+                  span(flex="40")
+                    md-button.md-raised.md-accent.checkout Checkout
+
+        //- md-menu(md-offset =" 0 40")
+        //-   span
+        //-     md-button.md-icon-button.store-icon-button(ng-href="www.google.com" ng-mouseenter="nav.openMenu($mdMenu, $event)")
+        //-       md-icon(md-svg-icon="cart" md-menu-origin )
+        //-     span.cart-badge 0
+        //-   md-menu-content(width='6', ng-mouseleave="nav.closeMenu($mdMenu, $event)")
+        //-     md-menu-item(ng-repeat='item in [1, 2, 3]')
+        //-       md-button
+        //-         | Option {{item}}
+

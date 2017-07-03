@@ -3,6 +3,10 @@
 class StoreNavbarController {
     constructor() {
         const self = this;
+        
+        this.openMenu = function($mdMenu, ev) {$mdMenu.open(ev);};
+        this.closeMenu = function($mdMenu, ev) {$mdMenu.close(ev);}; 
+        
         self.menu = [
         {state: 'Suits', title: 'Suits'},
         {state: 'Shirts', title: 'Shirts'},
