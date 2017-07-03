@@ -1,7 +1,8 @@
 'use strict';
 
 class StoreItemController {
-    constructor() {
+    constructor(appCart) {
+      this.add = appCart.add;
 
     }
 }

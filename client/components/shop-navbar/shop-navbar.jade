@@ -14,9 +14,9 @@ md-content.no-scroll(layout="row")
       li(flex="10" flex-offset="10" )
         span(ng-mouseenter="show=!show" ng-mouseleave="show=!show")
             md-button.md-icon-button.store-icon-button
-              md-icon(md-svg-icon="cart-outline" md-menu-origin ng-show="!show")
-              md-icon(md-svg-icon="cart" md-menu-origin ng-show="show")
-            span.cart-badge 0
+              md-icon(md-svg-icon="cart-outline" md-menu-origin ng-hide="$root.cart.totalQty")
+              md-icon(md-svg-icon="cart" md-menu-origin ng-show="$root.cart.totalQty")
+            span.cart-badge {{$root.cart.totalQty}}
             .cart-chevron(ng-show="show")
               md-icon(md-svg-icon="chevron-up")
             md-card.cart(ng-show="show")

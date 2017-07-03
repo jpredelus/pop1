@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('paquetApp', ['paquetApp.auth','paquetApp.metrics','paquetApp.filters', 'paquetApp.admin', 'paquetApp.home','paquetApp.store','paquetApp.constants',
+angular.module('paquetApp', [
+    'paquetApp.auth','paquetApp.metrics','paquetApp.filters', 'paquetApp.admin', 'paquetApp.home','paquetApp.store',
+    'paquetApp.constants','paquetApp.cart',
     'ngCookies', 'ngResource', 'ngSanitize', 'ngAnimate', 'btford.socket-io', 'ui.router',
     'validation.match', 'ngMaterial','ngMessages','mockStore','md.data.table','angularMoment','chart.js','countUpModule'
   ])
@@ -40,7 +42,7 @@ angular.module('paquetApp', ['paquetApp.auth','paquetApp.metrics','paquetApp.fil
     
 
   })
-  .run(function($rootScope) {
+  .run(function($rootScope, appCart) {
     $rootScope.$on('$stateChangeSuccess', function(event, state, params) {
         $rootScope.stateName = state.name;
     });
