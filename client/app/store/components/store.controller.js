@@ -3,9 +3,14 @@
 
 // Parent Component for the store
 class StoreController {
-  constructor($animate, chance, lodash, $scope, MockStore) {
+  constructor($animate, chance, lodash, $scope, MockStore,Product) {
     this.open = false;
     this.animate = $animate;
+    const test = MockStore.createDbProduct();
+    console.log(test);
+    const testp = new Product(test);
+    console.log(testp);
+    testp.$save();
 
     this.items = MockStore.createProducts(30);
     // listens for filter changes and shows loading screens

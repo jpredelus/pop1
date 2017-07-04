@@ -9,6 +9,30 @@ class MockStoreService {
     this.images = ['blacksuit.jpeg', 'bwsuit.jpeg', 'blackshoes.jpeg','graysuit.jpeg','redsuit.jpeg',
     'blackman.jpg','blacktux.jpg','bluesuit.jpg','redtie.jpg','whitesuit.jpg'];
   }
+
+  createDbProduct() {
+
+  this.chance.mixin({
+    dbProduct: ()=> {
+        const product = this.createProducts(1)[0];
+        
+        const size1 = this.chance.integer({min: 25, max: 45});
+        const size2 = this.chance.integer({min: 25, max: 45});
+
+        product.description = this.chance.paragraph();
+        product.imagePaths = [product.image];
+        product.sizes = [`${size1} x ${size2}`];
+        product.type = this.chance.word();
+        product.quantity = this.chance.integer({min:1, max: 100});
+        
+        delete product.image;
+        delete product.state;
+
+        return product;
+    }
+  });
+    return this.chance.dbProduct();
+  }
   /** Method that randomly generates products for store
     * @param {[int]} amount - Amount of products to generate
     * @param {[int]} random - number of random items to choose from default is 10
