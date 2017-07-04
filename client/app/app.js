@@ -42,7 +42,7 @@ angular.module('paquetApp', [
     
 
   })
-  .run(function($rootScope, appCart) {
+  .run(function($rootScope) {
     $rootScope.$on('$stateChangeSuccess', function(event, state, params) {
         $rootScope.stateName = state.name;
     });

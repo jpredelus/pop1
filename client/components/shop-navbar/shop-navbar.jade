@@ -21,14 +21,14 @@ md-content.no-scroll(layout="row")
               md-icon(md-svg-icon="chevron-up")
             md-card.cart(ng-show="show")
               md-card-content
-                md-list-item(layout="row" layout-wrap ng-repeat="i in [1,2,3]")
+                md-list-item(layout="row" layout-wrap ng-repeat="p in $root.cart.items")
                   div(flex="30")
-                    img(src="../assets/images/suits/redtie.jpg" width="70%")
+                    img(src="../assets/images/suits/{{p.item.imagePaths[0]}}" width="70%")
                   div(flex="70" layout="row" layout-wrap css-attr #font-size="12px")
-                    div(flex="65" css-attr #margin-bottom="3px") Marbled Olive Scarf 
-                    div(flex-offset="5" flex="25") $15.99
-                    div(flex="100" css-attr #margin-bottom="3px") Size: Medium
-                    div(flex="100" css-attr #margin-bottom="3px") Color: Red
+                    div(flex="65" css-attr #margin-bottom="3px") {{p.item.name}} 
+                    div(flex-offset="5" flex="25") {{p.item.price | currency}}
+                    div(flex="100" css-attr #margin-bottom="3px") Size: {{p.item.sizes[0]}}
+                    div(flex="100" css-attr #margin-bottom="3px") Color: {{p.item.color}}
                   div(flex="40")
                     a.remove-item.md-primary Remove Item
                 md-list-item(layout="row")
