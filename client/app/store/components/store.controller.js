@@ -6,13 +6,8 @@ class StoreController {
   constructor($animate, chance, lodash, $scope, MockStore,Product) {
     this.open = false;
     this.animate = $animate;
-    const test = MockStore.createDbProduct();
-    console.log(test);
-    const testp = new Product(test);
-    console.log(testp);
-    testp.$save();
 
-    this.items = MockStore.createProducts(30);
+    this.items = Product.query();
     // listens for filter changes and shows loading screens
     $scope.$on('FilterChange', ()=>{
             this.loading = true;

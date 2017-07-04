@@ -17,7 +17,11 @@ class itemFilterController {
 
         // object that stores whether a filter value is checked or unchecked
         this.filterValues = {};
+        this.updateRange = (filter) => {
+            this.filter.range = filter.range;
+            $scope.$emit('FilterChange');
 
+        };
         // function takes a bool and a filters value 
         // and updates whether it is checked or unchecked
         this.updateFilterValue = (value, bool)=> {

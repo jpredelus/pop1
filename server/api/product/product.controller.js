@@ -76,7 +76,6 @@ export function show(req, res) {
 
 // Creates a new Product in the DB
 export function create(req, res) {
-  console.log('product is being created');
   return Product.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));

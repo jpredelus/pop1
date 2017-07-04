@@ -2,7 +2,7 @@
 
 angular.module('paquetApp', [
     'paquetApp.auth','paquetApp.metrics','paquetApp.filters', 'paquetApp.admin', 'paquetApp.home','paquetApp.store',
-    'paquetApp.constants','paquetApp.cart',
+    'paquetApp.constants','paquetApp.cart','paquetApp.Product',
     'ngCookies', 'ngResource', 'ngSanitize', 'ngAnimate', 'btford.socket-io', 'ui.router',
     'validation.match', 'ngMaterial','ngMessages','mockStore','md.data.table','angularMoment','chart.js','countUpModule'
   ])

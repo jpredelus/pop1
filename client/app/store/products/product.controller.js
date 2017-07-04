@@ -1,7 +1,7 @@
 'use strict';
 
 class ProductController {
-    constructor(lodash, MockStore,$anchorScroll) {
+    constructor(lodash, MockStore,$anchorScroll, Product, $state) {
 
         // Variables for size selection animations and toggle
         this.show = false;
@@ -10,6 +10,18 @@ class ProductController {
             this.show = false;
             this.size = size;
         };
+        
+        const product = Product.get({id: $state.params.productId},
+        (success) => {
+            // seems like there is a bug with the carousel so images are chunked
+            this.slides = _.chunk(this.product.imagePaths,1);
+        }, 
+        (err)=>{
+            $state.go('store.404');
+        });
+
+        this.product = product;
+        
         
         // Get Reviews and review score
         this.reviews = MockStore.createReviews(6);
@@ -28,8 +40,9 @@ class ProductController {
         const _ = lodash;
         this.images = ['blacksuit.jpeg', 'bwsuit.jpeg', 'blackshoes.jpeg','graysuit.jpeg','redsuit.jpeg',
     'blackman.jpg','blacktux.jpg','bluesuit.jpg','redtie.jpg','whitesuit.jpg'];
-        // seems like there is a bug with the carousel so images are chunked
-        this.slides = _.chunk(this.images,1);
+        
+        
+        
 
 
     }
@@ -39,5 +52,5 @@ angular.module('paquetApp.store')
 .component('product',{
     templateUrl: 'app/store/products/product.html',
     controller: ProductController,
-    controllerAs: 'product'
+    controllerAs: 'ctrl'
 });

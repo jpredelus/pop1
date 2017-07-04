@@ -9,6 +9,6 @@
     });
   }
 
-  angular.module('paquetApp.auth')
+  angular.module('paquetApp.Product',[])
     .factory('Product', ProductResource);
 })();

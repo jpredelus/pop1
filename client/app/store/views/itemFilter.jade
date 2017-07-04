@@ -3,6 +3,13 @@
         md-icon(md-svg-icon="plus" ng-show="!selected")
         md-icon(md-svg-icon="minus" ng-show="selected")
 ul.filter-list-items(ng-show="selected")
-    li(ng-repeat="f in filter.static.values")
+    li(ng-repeat="f in filter.static.values" ng-if="!filter.static.range")
         md-checkbox.md-primary(ng-init="bool=false" ng-model="bool" ng-click="filter.updateFilterValue(f, !bool)")
             span.md-body-2 {{ f }}
+    li(ng-if="filter.static.range" layout="row")
+      md-input-container(flex="40")
+        label Min {{filter.static.name}}
+        input(ng-change="filter.updateRange(filter.static)" ng-model="filter.filter.range[0]" min="0" max="filter.filter.range[1]-1" type="number" step=".50")
+      md-input-container(flex-offset="10" flex="40")
+        label Max {{filter.static.name}}
+        input(ng-change="filter.updateRange(filter.static)" ng-model="filter.filter.range[1]" min="filter.filter.range[0]+1" type="number" step=".50")
