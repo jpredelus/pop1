@@ -1,7 +1,7 @@
 'use strict';
 
 class CartService {
-  constructor($rootScope, $http, $cookies) {
+  constructor($rootScope, $http) {
     const cart = {};
     cart.items = {};
     cart.totalQty = 0;
@@ -10,6 +10,18 @@ class CartService {
     //updates cart
     this.setCart = (myCart) => {$rootScope.cart = myCart;};
     
+    this.removeFromCart = (id)=> {
+      $http.get(`/cart/remove-product/${id}`).then(
+        (res)=>{
+          console.log(res.data);
+          this.setCart(res.data);
+        },
+        (err)=>{
+          console.log(err);
+        }
+      );
+    };
+
     //gets cart
     this.getCart = ()=> {
       $http.get('/cart') .then(

@@ -38,6 +38,14 @@ export function addToCart(req, res) {
   })
 }
 
+export function removeFromCart(req, res) {
+  var productId = req.params.id
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+  cart.removeItem(productId)
+  req.session.cart = cart;
+  res.status(200).json(cart);
+}
+
 export function emptyCart(req, res) {
   var cart = new Cart({});
   req.session.cart = cart;

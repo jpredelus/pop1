@@ -1,9 +1,9 @@
 'use strict';
 // Component serves as navbar for store
 class StoreNavbarController {
-    constructor() {
+    constructor(appCart) {
         const self = this;
-        
+        this.remove = appCart.removeFromCart;
 
         this.openMenu = function($mdMenu, ev) {$mdMenu.open(ev);};
         this.closeMenu = function($mdMenu, ev) {$mdMenu.close(ev);}; 
