@@ -41,6 +41,11 @@
   padding: 10px
 }
 
+.cart md-card-content {
+  max-height: 390px;
+  overflow: auto;
+}
+
 .cart-chevron {
   position: relative;
   top: -20px;

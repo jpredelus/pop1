@@ -7,11 +7,12 @@ md-card.cart
         div(flex="65" css-attr #margin-bottom="3px") {{p.item.name}} 
         div(flex-offset="5" flex="25") {{p.item.price | currency}}
         div(flex="100" css-attr #margin-bottom="3px") Size: {{p.item.sizes[0]}}
-        div(flex="100" css-attr #margin-bottom="3px") Color: {{p.item.quantity}}
+        div(flex="100" css-attr #margin-bottom="3px") Color: {{p.item.color}}
         div(flex="100" css-attr #margin-bottom="3px") Quantitiy: {{p.qty}}
       div(flex="40")
         a.remove-item.md-primary(ng-click="ctrl.remove(p.item._id)") Remove Item
     md-list-item(layout="row" ng-show="ctrl.cart.totalQty > 0")
       span.md-body-1(flex="") Subtotal:  {{ctrl.cart.totalPrice | currency}}
       span(flex="40")
-        md-button.md-raised.md-accent.checkout Checkout
+        a(ui-sref="checkout")
+          md-button.md-raised.md-accent.checkout Checkout

@@ -53,6 +53,9 @@ textarea {
   display: none !important;
 }
 
+.white-bg {
+  background-color: #fff;
+}
 
 .md-button.md-small {
     min-width: 1%;

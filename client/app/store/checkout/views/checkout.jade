@@ -1,0 +1,19 @@
+md-content.white-bg(layout="row", layout-padding layout-wrap layout-fill )
+  div(flex-offset="5" flex="55")
+    .md-display-2.raleway.checkout-item(css-attr #padding="25px 15px") Shopping Cart
+    .checkout-item.md-headline(css-attr #padding="15px 15px") Items
+    .checkout-item(flex='100' layout="row" layout-wrap layout-padding ng-repeat="p in $root.cart.items")
+      div(flex="30")
+        img(src="../assets/images/suits/{{p.item.imagePaths[0]}}" width="70%")
+      .center-all(flex="25")
+        div.md-title(flex="100" css-attr #margin-bottom="10px") {{p.item.name}} 
+        div(flex="100" css-attr #margin-bottom="3px") Size: {{p.item.sizes[0]}}
+        div(flex="100" css-attr #margin-bottom="3px") Color: {{p.item.color}}
+        div(flex="100" css-attr #margin-bottom="3px") Quantity: {{p.qty}}
+      .center-all.md-body-2(flex-offset="30" flex="10")
+        {{p.item.price | currency}}
+      div(flex-offset="90" flex='10')
+        a.remove-item.md-primary(ng-click="ctrl.remove(p.item._id)") Remove
+    div(flex-offset="80" flex="20" css-attr #padding="20px 0px") Subtotal: {{$root.cart.totalPrice | currency}}
+  div(flex="40")
+

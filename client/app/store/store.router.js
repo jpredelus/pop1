@@ -18,6 +18,17 @@ angular.module('paquetApp.store')
           '@': {component: 'product'}
         }
       })
+      .state('checkout', {
+        parent: 'store',
+        url: '/checkout',
+        views: {
+          '@': {
+            templateUrl: 'app/store/checkout/views/checkout.html',
+            controller: 'CheckoutController',
+            controllerAs: 'ctrl'
+          }
+        }
+      })
       .state('404', {
         parent: 'store',
         url:'',
