@@ -1,8 +1,10 @@
 'use strict';
 
 class ProductController {
-    constructor(lodash, MockStore,$anchorScroll, Product, $state) {
-
+    constructor(lodash, MockStore,$anchorScroll, Product, $state, appCart) {
+        
+        this.add = appCart.add;
+        
         // Variables for size selection animations and toggle
         this.show = false;
         this.fadeInOut = ()=> { return this.show ? 'fadeInDown' : 'fadeOutUp'; };

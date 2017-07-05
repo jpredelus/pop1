@@ -12,7 +12,7 @@ md-content(layout="row", layout-padding layout-wrap layout-fill css-attr #backgr
           span(ng-if="!ctrl.size") Select Size
           span(ng-if="ctrl.size") {{ctrl.size | uppercase}}
           md-icon(ng-class="{'expand': ctrl.show}" md-svg-icon="chevron-up")
-        md-button.group.md-raised(flex="50" ng-class="{'md-accent': ctrl.size,}") Add to Bag
+        md-button.group.md-raised(flex="50" ng-class="{'md-accent': ctrl.size,}" ng-disabled="!ctrl.size" ng-click="ctrl.add(ctrl.product._id)") Add to Cart
         .animated.group-menu.md-whiteframe-4dp(ng-class="ctrl.fadeInOut()" ng-show="ctrl.show" flex="100" layout="row" layout-wrap layout-fill)
           md-button.md-raised(md-colors="{'background-color': 'grey'}" ng-repeat="size in ctrl.product.sizes" flex="25" ng-click="ctrl.selectSize(size)") {{ size | uppercase}}
         div(flex="100")
