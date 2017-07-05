@@ -1,5 +1,6 @@
 md-card.shop-card(ng-class="{'md-whiteframe-5dp': hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = false")
-    img.md-card-img(src="../assets/images/suits/{{::item.item.imagePaths[0]}}")
+    a(href="store/product/{{::item.item.name.replace(' ','_')}}/{{::item.item._id}}")
+        img.md-card-img(src="../assets/images/suits/{{::item.item.imagePaths[0]}}")
     md-card-content(layout="column" css-attr #padding="12px")
         div(css-attr #margin-bottom="10px")
             a(href="http://google.com") Username
